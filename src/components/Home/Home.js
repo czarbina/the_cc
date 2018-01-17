@@ -2,9 +2,12 @@ import React from "react";
 import "./Home.css";
 import { Parallax, Background } from 'react-parallax';
 import { render } from 'react-dom';
-import { Button, Card, Row, Col, Navbar, NavItem, Modal } from 'react-materialize';
+import { Button, Card, Row, Col, Navbar, NavItem, Icon } from 'react-materialize';
 import $ from "jquery";
 import ReactModal from 'react-modal';
+import share from "./001-brush.png";
+import connect from "./003-pencil.png";
+import success from "./002-interface.png";
 
 
 const painter = "http://sicklesmarket.com/sites/default/files/images/event/sickles-events-593.jpg";
@@ -139,24 +142,23 @@ class Home extends React.Component {
     <div className="section">
       <Row>
         <Col s={12} m={4}>
-          <div className="icon-block">
-            <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
+            <h2 className="center brown-text">
+            <img src={share}></img></h2>
             <h5 className="center">Exhibit and curate your work</h5>
             <p className="light">The Creative Collective serves as a gallery, a stage, a or a booking agent to help showcase your creative body of work on a virtual platform. Create and manage your art, music, videos, or writings through easy to build profiles.</p>
-          </div>
         </Col>
 
         <Col s={12} m={4}>
-          <div className="icon-block">
-            <h2 className="center brown-text"><i className="material-icons">group</i></h2>
+            <h2 className="center brown-text">
+              <img src={connect}></img></h2>
             <h5 className="center">Connect and collaborate with other artists</h5>
             <p className="light">Need a drummer? Perhaps you can find the John Bohnham to your Jimmy Page in our vast network of musicians. Looking to collaboate with another mural artist on a large outdoor piece? Here's the place to find them.</p>
-          </div>
         </Col>
 
         <Col s={12} m={4}>
           <div className="icon-block">
-            <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
+            <h2 className="center brown-text">       
+            <img src={success}></img></h2>
             <h5 className="center">Book gigs and sell your work.</h5>
             <p className="light">You're a DJ? Use the calendar.. blablabla</p>
           </div>
