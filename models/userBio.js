@@ -1,24 +1,21 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
-
-var Userbio = sequelize.define("userbio", {
-  artistName: Sequelize.STRING,
-  // person's name (a string)
-  bio: Sequelize.STRING,
-  // valid email address for confirmation
-  tags: Sequelize.STRING,
+module.exports = function(sequelize, DataTypes) {
   
-  links: Sequelize.STRING,
+var Userbio = sequelize.define("userbio", {
+  artistName: DataTypes.STRING,
+  // person's name (a string)
+  bio: DataTypes.STRING,
+  // valid email address for confirmation
+  tags: DataTypes.STRING,
+
+  links: DataTypes.STRING,
   // geographic area importante
-  coverphoto: Sequelize.STRING
+  coverphoto: DataTypes.STRING
   // validate they are of legal age to use our service
 }, {
   timestamps: true
 });
-
-Userbio.sync();
-
-module.exports = Userbio; 
+ return Userbio;
+};
 
 //artistName
 //snippet/description of self

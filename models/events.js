@@ -1,22 +1,19 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes) {
 
 var Events = sequelize.define("events", {
-  eventname: Sequelize.STRING,
+  eventname: DataTypes.STRING,
 
-  location: Sequelize.STRING,
+  location: DataTypes.STRING,
 
-  date: Sequelize.INTEGER,
-  
-  description: Sequelize.STRING,
+  date: DataTypes.INTEGER,
 
-  photo: Sequelize.STRING
- 
+  description: DataTypes.STRING,
+
+  photo: DataTypes.STRING
+
 }, {
   timestamps: true
 });
 
-Events.sync();
-
-module.exports = Events; 
-
+return Events
+};

@@ -1,27 +1,26 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes) {
 
 var User = sequelize.define("user", {
-  name: Sequelize.STRING,
+  name: DataTypes.STRING,
   // person's name (a string)
-  emailAddress: Sequelize.STRING,
+  emailAddress: DataTypes.STRING,
   // valid email address for confirmation
-  password: Sequelize.STRING,
-  
-  zipcode: Sequelize.INTEGER,
-  // geographic area importante
-  birthday: Sequelize.INTEGER,
+  password: DataTypes.STRING,
 
-  photo: Sequelize.INTEGER,
+  zipcode: DataTypes.INTEGER,
+  // geographic area importante
+  birthday: DataTypes.INTEGER,
+
+  photo: DataTypes.INTEGER,
 
   // validate they are of legal age to use our service
 }, {
   timestamps: true
 });
 
-User.sync();
+return User;
 
-module.exports = User; 
+};
 
 
 // Name (first, last?)
