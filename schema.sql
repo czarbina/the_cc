@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS `theccdb`;
+CREATE DATABASE `theccdb`;
