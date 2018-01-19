@@ -17,3 +17,6 @@ var Events = sequelize.define("events", {
 
 return Events
 };
+
+
+
