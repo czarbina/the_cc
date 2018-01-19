@@ -5,6 +5,7 @@ var User = sequelize.define("user", {
   // person's name (a string)
   emailAddress: {
       type: DataTypes.STRING,
+      isEmail: true,
       allowNull: false,
       validate: {
         len: [1]
@@ -32,9 +33,7 @@ var User = sequelize.define("user", {
   zipcode: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      equals: 5
     },
 
   birthday: {
@@ -47,9 +46,7 @@ var User = sequelize.define("user", {
 
   photo: {type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      isUrl: true
 
 }, {
   timestamps: true
