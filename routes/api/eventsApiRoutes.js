@@ -1,17 +1,17 @@
-var Events = require("../../models/Events.js");
+var db = require("../../models");
+var router = require("express").Router();
 
-module.exports = function(app) {
 
-app.get("/events/all", function(req, res) {
-    Events.findAll({}).then(function(results) {
+router.get("/all", function(req, res) {
+    db.Events.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
 
-app.get("/events/:artistName", function(req, res) {
+router.get("/:artistName", function(req, res) {
     if (req.params.artistName) {
-      Events.findAll({
+      db.Events.findAll({
         where: {
           artistName: req.params.artistName
         }
@@ -21,9 +21,9 @@ app.get("/events/:artistName", function(req, res) {
     }
   });
 
-app.get("/events/:username", function(req, res) {
+router.get("/:username", function(req, res) {
     if (req.params.username) {
-      Events.findAll({
+      db.Events.findAll({
         where: {
           username: req.params.username
         }
@@ -33,9 +33,9 @@ app.get("/events/:username", function(req, res) {
     }
 });
 
-app.get("/events/:id", function(req, res) {
+router.get("/:id", function(req, res) {
     if (req.params.id) {
-      Events.findAll({
+      db.Events.findAll({
         where: {
           id: req.params.id
         }
@@ -46,19 +46,20 @@ app.get("/events/:id", function(req, res) {
 });
   
 
-  app.post("/events/newUser", function(req, res) {
+  router.post("/newUser", function(req, res) {
     console.log(req.body);
-    Events.create({
+    db.Events.create({
       
     });
   });
 
-  app.post("/events/delete", function(req, res) {
+  router.post("/delete", function(req, res) {
     console.log(req.body);
-    Events.destroy({
+    db.Events.destroy({
       where: {
         id: req.body.id
       }
     });
   });
-}; 
+
+module.exports = router;

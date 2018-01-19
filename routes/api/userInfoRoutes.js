@@ -1,17 +1,18 @@
-var UserInfo = require("../../models/userInfo.js");
+var router = require("express").Router();
+var db = require("../../models");
 
-module.exports = function(app) {
 
-  app.get("/api/all", function(req, res) {
-    UserInfo.findAll({}).then(function(results) {
+  router.get("/all", function(req, res) {
+    db.User.findAll({}).then(function(results) {
+      console.log(results);
       res.json(results);
     });
   });
 
 
-  app.get("/api/:username", function(req, res) {
+  router.get("/:username", function(req, res) {
     if (req.params.username) {
-      UserInfo.findAll({
+      db.User.findAll({
         where: {
           username: req.params.username
         }
@@ -21,9 +22,9 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/name/:name", function(req, res) {
+  router.get("/name/:name", function(req, res) {
     if (req.params.name) {
-      UserInfo.findAll({
+      db.User.findAll({
         where: {
           name: req.params.name
         }
@@ -33,9 +34,9 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/emailAddress/:emailAddress", function(req, res) {
+  router.get("/emailAddress/:emailAddress", function(req, res) {
     if (req.params.emailAddress) {
-      UserInfo.findAll({
+      db.User.findAll({
         where: {
           emailAddress: req.params.emailAddress
         }
@@ -45,9 +46,9 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/birthday/:birthday", function(req, res) {
+  router.get("/birthday/:birthday", function(req, res) {
     if (req.params.birthday) {
-      UserInfo.findAll({
+      db.User.findAll({
         where: {
           birthday: req.params.birthday
         }
@@ -57,9 +58,9 @@ module.exports = function(app) {
     }
   });
 
-    app.get("/api/id/:id", function(req, res) {
+    router.get("/id/:id", function(req, res) {
     if (req.params.id) {
-      UserInfo.findAll({
+      db.User.findAll({
         where: {
           id: req.params.id
         }
@@ -69,9 +70,9 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/zipcode/:zipcode", function(req, res) {
+  router.get("/zipcode/:zipcode", function(req, res) {
     if (req.params.zipcode) {
-      UserInfo.findAll({
+      db.User.findAll({
         where: {
           zipcode: req.params.zipcode
         }
@@ -81,27 +82,28 @@ module.exports = function(app) {
     }
   });
 
-  app.post("/api/newUser", function(req, res) {
+  router.post("/newUser", function(req, res) {
     console.log("Book Data:");
     console.log(req.body);
-    UserInfo.create({
+    db.User.create({
       name: req.body.name,
       emailAddress: req.body.emailAddress,
       password: req.body.password,
       zipcode: req.body.zipcode,
-      birthday; req.body.birthday,
+      birthday: req.body.birthday,
       photo: req.body.photo
      
     });
   });
 
-  app.post("/api/delete", function(req, res) {
+  router.post("/delete", function(req, res) {
     console.log("Book Data:");
     console.log(req.body);
-    UserInfo.destroy({
+    db.User.destroy({
       where: {
         id: req.body.id
       }
     });
   });
-};
+
+  module.exports  = router;

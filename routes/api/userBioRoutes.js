@@ -1,17 +1,17 @@
-var UserBio = require("../../models/userBio.js");
+var db = require("../../models");
+var router = require("express").Router();
 
-module.exports = function(app) {
 
-  app.get("/bio/all", function(req, res) {
-    UserBio.findAll({}).then(function(results) {
+  router.get("/all", function(req, res) {
+    db.UserBio.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
 
-  app.get("/bio/:artistName", function(req, res) {
+  router.get("/:artistName", function(req, res) {
     if (req.params.artistName) {
-      UserBio.findAll({
+      db.UserBio.findAll({
         where: {
           artistName: req.params.artistName
         }
@@ -21,9 +21,9 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/bio/:bio", function(req, res) {
+  router.get("/:bio", function(req, res) {
     if (req.params.bio) {
-      UserBio.findAll({
+      db.UserBio.findAll({
         where: {
           bio: req.params.bio
         }
@@ -33,9 +33,9 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/bio/:tag", function(req, res) {
+  router.get("/:tag", function(req, res) {
     if (req.params.tag) {
-      UserBio.findAll({
+      db.UserBio.findAll({
         where: {
           tag: req.params.tag
         }
@@ -45,9 +45,9 @@ module.exports = function(app) {
     }
   });
 
-  app.post("/bio/newUser", function(req, res) {
+  router.post("/newUser", function(req, res) {
     console.log(req.body);
-    UserBio.create({
+    db.UserBio.create({
       artistName: req.body.artistName,
       bio: req.body.bio,
       tags: req.body.tags,
@@ -56,12 +56,13 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/bio/delete", function(req, res) {
+  router.post("/delete", function(req, res) {
     console.log(req.body);
-    UserBio.destroy({
+    db.UserBio.destroy({
       where: {
         id: req.body.id
       }
     });
   });
-};
+
+  module.exports = router;
