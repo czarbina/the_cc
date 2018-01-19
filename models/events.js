@@ -36,6 +36,7 @@ var Events = sequelize.define("events", {
   photo: {
   		type: DataTypes.STRING,
      	allowNull: true,
+     	isUrl: true,
      	validate: {
         len: [1]
       }

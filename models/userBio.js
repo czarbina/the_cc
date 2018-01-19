@@ -8,7 +8,7 @@ var Userbio = sequelize.define("userbio", {
         len: [1]
       }
     },
-  // person's name (a string)
+
   bio: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -16,14 +16,9 @@ var Userbio = sequelize.define("userbio", {
         len: [1]
       }
     },
+   
+  tags: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-  // valid email address for confirmation
-  tags: {type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
@@ -32,19 +27,17 @@ var Userbio = sequelize.define("userbio", {
 
   links: {
     type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      isUrl: true,
       validate: {
         len: [1]
       }
     },
-  // geographic area importante
+
   coverphoto: {
-  type: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
+      isUrl: true
   // validate they are of legal age to use our service
 }, {
   timestamps: true
