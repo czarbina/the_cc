@@ -5,9 +5,9 @@
     right: 40px;
     bottom: 40px;
     width: 60%;
-    height: 60%;
+    height: 70%;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
     background-color: white;
   }
 
@@ -25,9 +25,9 @@
     margin: 20px;
   }
 
-  #regBtn {
+  /*#regBtn {
     text-align: right;
-  }
+  }*/
 
   @font-face {
   font-family: "Material Icons";

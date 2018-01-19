@@ -95,11 +95,11 @@ class Home extends React.Component {
 
         >
             <div className="modal-content">
-              <h4 style={{color:"#7986cb"}}>Registration</h4>
+              <h4 style={{color:"#7986cb", textAlign: "center"}}>Registration</h4>
               <form className="col s12">
                 <Row>
                   <Col s={6} className="input-field">
-                    <input placeholder="First Name" id="first_name" type="text" className="validate"></input>
+                    <input id="first_name" type="text" className="validate"></input>
                     <label for="first_name">First Name</label>
                   </Col>
                   <Col s={6} className="input-field">
@@ -109,25 +109,32 @@ class Home extends React.Component {
                 </Row>
                 <Row>
                   <Col s={12} className="input-field">
-                    <input id="password" type="password" className="validate"></input>
-                    <label for="password">Password</label>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col s={12} className="input-field">
                     <input id="email" type="email" className="validate"></input>
                     <label for="email">Email</label>
                   </Col>
                 </Row>
                 <Row>
-                  <Col s={9}>
-                    This is an inline input field:
-                    <div className="input-field inline">
-                      <input id="email" type="email" className="validate"></input>
-                      <label for="email" data-error="wrong" data-success="right">Email</label>
-                    </div>
+                  <Col s={6} className="input-field">
+                    <input id="username" type="text" className="validate"></input>
+                    <label for="username">Username</label>
                   </Col>
-                  <Col s={3}>
+                  <Col s={6} className="input-field">
+                    <input id="password" type="password" className="validate"></input>
+                    <label for="password">Password</label>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col s={6} className="input-field">
+                    <input id="dob" type="text" className="validate"></input>
+                    <label for="dob">Birthday (DDMMYYYY)</label>
+                  </Col>
+                  <Col s={6} className="input-field">
+                    <input id="zipcode" type="text" className="validate"></input>
+                    <label for="zipcode">Zipcode</label>
+                  </Col>
+                </Row>
+                <Row> 
+                  <Col s={6}>
                     <Button 
                       href="#!" 
                       id="regBtn" 
