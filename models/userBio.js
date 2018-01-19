@@ -1,15 +1,50 @@
 module.exports = function(sequelize, DataTypes) {
   
 var Userbio = sequelize.define("userbio", {
-  artistName: DataTypes.STRING,
+  artistName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
   // person's name (a string)
-  bio: DataTypes.STRING,
+  bio: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
   // valid email address for confirmation
-  tags: DataTypes.STRING,
+  tags: {type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
 
-  links: DataTypes.STRING,
+  links: {
+    type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
   // geographic area importante
-  coverphoto: DataTypes.STRING
+  coverphoto: {
+  type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
   // validate they are of legal age to use our service
 }, {
   timestamps: true

@@ -3,17 +3,54 @@ module.exports = function(sequelize, DataTypes) {
 var User = sequelize.define("user", {
   name: DataTypes.STRING,
   // person's name (a string)
-  emailAddress: DataTypes.STRING,
+  emailAddress: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+
+  },
+
+  username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+
+  },
   // valid email address for confirmation
-  password: DataTypes.STRING,
+  password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1,20]
+      }
+  },
 
-  zipcode: DataTypes.INTEGER,
-  // geographic area importante
-  birthday: DataTypes.INTEGER,
+  zipcode: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
 
-  photo: DataTypes.INTEGER,
+  birthday: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
 
-  // validate they are of legal age to use our service
+  photo: {type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+
 }, {
   timestamps: true
 });
