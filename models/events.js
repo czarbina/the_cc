@@ -9,6 +9,15 @@ var Events = sequelize.define("events", {
       }
   },
 
+ username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+
+  },
+
   location: {
   		type: DataTypes.STRING,
      	allowNull: false,
