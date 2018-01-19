@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   
-var Userbio = sequelize.define("userbio", {
+var Userbio = sequelize.define("Userbio", {
   artistName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -39,10 +39,11 @@ var Userbio = sequelize.define("userbio", {
       allowNull: false,
       isUrl: true
   // validate they are of legal age to use our service
+  }
 }, {
-  timestamps: true
+  timestamps: false
 });
- return Userbio;
+return Userbio;
 };
 
 //artistName

@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 
-var Events = sequelize.define("events", {
+var Events = sequelize.define("Events", {
   eventname: {
   		type: DataTypes.STRING,
      	allowNull: false,
@@ -50,9 +50,12 @@ var Events = sequelize.define("events", {
         len: [1]
       }
 
+    }
 }, {
-  timestamps: true
+  timestamps: false
 });
-
-return Events
+  return Events;
 };
+
+
+
