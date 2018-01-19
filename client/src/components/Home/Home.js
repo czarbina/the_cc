@@ -19,7 +19,7 @@ class Home extends React.Component {
     constructor () {
     super();
     this.state = {
-      showModal: false
+      showModal: false 
     };
     
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -32,6 +32,10 @@ class Home extends React.Component {
   
   handleCloseModal () {
     this.setState({ showModal: false });
+  }
+
+  shouldCloseOnOverlayClick () {
+    this.setState({ showModal: false })
   }
 
 
@@ -86,7 +90,9 @@ class Home extends React.Component {
            contentLabel="Registration"
            id="modal1"
            className="Modal"
-           overlayClassName="Overlay" 
+           overlayClassName="Overlay"
+           onRequestClose={this.handleCloseModal}
+
         >
             <div className="modal-content">
               <h4 style={{color:"#7986cb"}}>Registration</h4>
