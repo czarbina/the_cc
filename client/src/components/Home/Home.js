@@ -1,14 +1,13 @@
 import React from "react";
 import "./Home.css";
-import Nav from "../Nav"
 import { Parallax, Background } from 'react-parallax';
 import { render } from 'react-dom';
+import { Link } from "react-router-dom";
 import { Button, Card, Row, Col, Icon } from 'react-materialize';
 import ReactModal from 'react-modal';
 import share from "./001-brush.png";
 import connect from "./003-pencil.png";
 import success from "./002-interface.png";
-
 
 const painter = "http://sicklesmarket.com/sites/default/files/images/event/sickles-events-593.jpg";
 const musician = "https://media.pulseradio.net/media/transfer/img/articleimage/2016-02/tech_house_main.png";
@@ -43,7 +42,6 @@ class Home extends React.Component {
     return (
   <div>
    
-  <Nav/>
   <Parallax
     bgImage={painter}
     bgWidth="100%"
@@ -90,7 +88,7 @@ class Home extends React.Component {
         >
             <div className="modal-content">
               <h4 style={{color:"#7986cb", textAlign: "center"}}>Registration</h4>
-              <form className="col s12">
+              <form className="col s12" onSubmit={this.props.submitReg}>
                 <Row>
                   <Col s={6} className="input-field">
                     <input id="first_name" type="text" className="validate"></input>
@@ -129,11 +127,13 @@ class Home extends React.Component {
                 </Row>
                 <Row> 
                   <Col s={6}>
+                    <Link to="/profile">
                     <Button 
                       href="#!" 
                       id="regBtn" 
                       className="btn-large waves-effect waves-light #7986cb indigo lighten-2" 
                       onClick={this.handleCloseModal}>SUBMIT</Button>
+                      </Link>
                   </Col>
                 </Row>
               </form>

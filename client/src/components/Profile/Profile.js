@@ -26,7 +26,6 @@ class Profile extends Component {
 	render () {
     return (
     	<div>
-    	<Nav/>
     	<ProfileCard
 
     	/>		  	

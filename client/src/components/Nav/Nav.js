@@ -1,12 +1,16 @@
 import React from "react";
 import { render } from 'react-dom';
 import { Navbar, NavItem } from 'react-materialize';
+import { Link } from "react-router-dom";
 
 const Nav = () => (
 
   <div>
     <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2"> 
-      <NavItem href="/login">Login</NavItem>
+      <NavItem>
+        <Link to="/profile">LOGIN</Link>
+
+      </NavItem>
         <ul id="nav-mobile" className="side-nav">
           <li><a href="#">Navbar Link</a></li>
         </ul>
