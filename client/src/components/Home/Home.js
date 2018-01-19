@@ -1,9 +1,9 @@
 import React from "react";
 import "./Home.css";
+import Nav from "../Nav"
 import { Parallax, Background } from 'react-parallax';
 import { render } from 'react-dom';
-import { Button, Card, Row, Col, Navbar, NavItem, Icon } from 'react-materialize';
-import $ from "jquery";
+import { Button, Card, Row, Col, Icon } from 'react-materialize';
 import ReactModal from 'react-modal';
 import share from "./001-brush.png";
 import connect from "./003-pencil.png";
@@ -42,14 +42,8 @@ class Home extends React.Component {
   render () {
     return (
   <div>
-    <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2"> 
-      <NavItem href="/login">Login</NavItem>
-        <ul id="nav-mobile" className="side-nav">
-          <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
-    </Navbar>
-
+   
+  <Nav/>
   <Parallax
     bgImage={painter}
     bgWidth="100%"
