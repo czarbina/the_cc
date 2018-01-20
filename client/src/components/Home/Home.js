@@ -37,6 +37,16 @@ class Home extends React.Component {
     this.setState({ showModal: false })
   }
 
+  // submitReg(event) {
+  //   event.preventDefault();
+  //   const data = new FormData(event.target);
+  //   console.log(data);
+    
+  //   // fetch('', {
+  //   //   method: 'POST',
+  //   //   body: data,
+  //   // });
+  // }
 
   render () {
     return (
@@ -88,7 +98,7 @@ class Home extends React.Component {
         >
             <div className="modal-content">
               <h4 style={{color:"#7986cb", textAlign: "center"}}>Registration</h4>
-              <form className="col s12" onSubmit={this.props.submitReg}>
+              <form className="col s12" onSubmit={this.submitReg}>
                 <Row>
                   <Col s={6} className="input-field">
                     <input id="first_name" type="text" className="validate"></input>
@@ -139,7 +149,7 @@ class Home extends React.Component {
               </form>
             </div>
           </ReactModal>
-          </Row>
+          </Row> 
         </div>
       </div>
     </div>
