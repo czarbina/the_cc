@@ -83,7 +83,6 @@ var db = require("../../models");
   });
 
   router.post("/newUser", function(req, res) {
-    console.log("Book Data:");
     console.log(req.body);
     db.User.create({
       name: req.body.name,
