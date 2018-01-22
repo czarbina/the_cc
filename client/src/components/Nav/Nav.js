@@ -11,6 +11,10 @@ const Nav = () => (
         <Link to="/profile">LOGIN</Link>
 
       </NavItem>
+      
+      <NavItem>
+        <Link to="/browse">BROWSE</Link>
+      </NavItem>
         <ul id="nav-mobile" className="side-nav">
           <li><a href="#">Navbar Link</a></li>
         </ul>

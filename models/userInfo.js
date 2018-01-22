@@ -46,7 +46,7 @@ var User = sequelize.define("User", {
 
   photo: {
     type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       isUrl: true
 
     }
