@@ -19,7 +19,7 @@ var Userbio = sequelize.define("Userbio", {
    
   tags: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -36,7 +36,7 @@ var Userbio = sequelize.define("Userbio", {
 
   coverphoto: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       isUrl: true
   // validate they are of legal age to use our service
   }
