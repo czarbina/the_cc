@@ -8,29 +8,33 @@ import ReactModal from 'react-modal';
 import share from "./001-brush.png";
 import connect from "./003-pencil.png";
 import success from "./002-interface.png";
+import axios from 'axios';
 
 const painter = "http://sicklesmarket.com/sites/default/files/images/event/sickles-events-593.jpg";
 const musician = "https://media.pulseradio.net/media/transfer/img/articleimage/2016-02/tech_house_main.png";
 const graffiti = "https://www.olivet.edu/sites/default/files/images/page-blocks/trowel-paint.jpg";
 
-class Home extends React.Component { 
+class Home extends React.Component {
 
     constructor () {
     super();
     this.state = {
-      showModal: false 
+      showModal: false
     };
-    
+
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
-  
+
   handleOpenModal () {
     this.setState({ showModal: true });
   }
-  
+
   handleCloseModal () {
     this.setState({ showModal: false });
+    axios.get('/register').then(() => {
+      console.log("tadah");
+    })
   }
 
   shouldCloseOnOverlayClick () {
@@ -41,7 +45,7 @@ class Home extends React.Component {
   //   event.preventDefault();
   //   const data = new FormData(event.target);
   //   console.log(data);
-    
+
   //   // fetch('', {
   //   //   method: 'POST',
   //   //   body: data,
@@ -51,18 +55,18 @@ class Home extends React.Component {
   render () {
     return (
   <div>
-   
+
   <Parallax
     bgImage={painter}
     bgWidth="100%"
     bgHeight="500"
     strength={500}
   >
-    <div className="parallax-container" 
+    <div className="parallax-container"
         style={{
-          minHeight: "380px", 
-          lineHeight: 0, 
-          height: "auto", 
+          minHeight: "380px",
+          lineHeight: 0,
+          height: "auto",
           color: "#ffffffff",
           display: "-webkit-box",
           display: "-webkit-flex",
@@ -81,13 +85,13 @@ class Home extends React.Component {
             <h5 className="header col s12 light">Join our creative community!</h5>
           </Row>
           <Row className="center">
-            <Button 
+            <Button
             style={{zIndex:0}}
-            id="reg-button" 
+            id="reg-button"
             onClick={this.handleOpenModal}
             className="btn-large waves-effect waves-light #7986cb indigo lighten-2">Sign up</Button>
 
-          <ReactModal 
+          <ReactModal
            isOpen={this.state.showModal}
            contentLabel="Registration"
            id="modal1"
@@ -135,13 +139,13 @@ class Home extends React.Component {
                     <label for="zipcode">Zipcode</label>
                   </Col>
                 </Row>
-                <Row> 
+                <Row>
                   <Col s={6}>
                     <Link to="/profile">
-                    <Button 
-                      href="#!" 
-                      id="regBtn" 
-                      className="btn-large waves-effect waves-light #7986cb indigo lighten-2" 
+                    <Button
+                      href="#!"
+                      id="regBtn"
+                      className="btn-large waves-effect waves-light #7986cb indigo lighten-2"
                       onClick={this.handleCloseModal}>SUBMIT</Button>
                       </Link>
                   </Col>
@@ -149,7 +153,7 @@ class Home extends React.Component {
               </form>
             </div>
           </ReactModal>
-          </Row> 
+          </Row>
         </div>
       </div>
     </div>
@@ -174,7 +178,7 @@ class Home extends React.Component {
 
         <Col s={12} m={4}>
           <div className="icon-block">
-            <h2 className="center brown-text">       
+            <h2 className="center brown-text">
             <img src={success}></img></h2>
             <h5 className="center">Book gigs and sell your work.</h5>
             <p className="light">You're a DJ? Use the calendar.. blablabla</p>
@@ -189,11 +193,11 @@ class Home extends React.Component {
     bgHeight="500"
     strength={500}
   >
-    <div className="parallax-container" 
+    <div className="parallax-container"
       style={{
-        minHeight: "380px", 
-        lineHeight: 0, 
-        height: "auto", 
+        minHeight: "380px",
+        lineHeight: 0,
+        height: "auto",
         color: "#ffffffff",
         WebkitBoxAlign: "center",
         WebkitAlignItems: "center",
@@ -204,7 +208,7 @@ class Home extends React.Component {
       <div className="section no-pad-bot" style={{width: ""}}>
         <div className="container" style={{ height: 450, width: "100%"}}>
           <Row className="center" style={{width: ""}}>
-            <h5 className="header col s12 light" 
+            <h5 className="header col s12 light"
               style={{
                 marginLeft: "auto",
                 left: "auto",
@@ -234,11 +238,11 @@ class Home extends React.Component {
     bgHeight="500"
     strength={500}
   >
-    <div className="parallax-container" 
+    <div className="parallax-container"
       style={{
-        minHeight: "380px", 
-        lineHeight: 0, 
-        height: "auto", 
+        minHeight: "380px",
+        lineHeight: 0,
+        height: "auto",
         color: "#ffffffff",
         WebkitBoxAlign: "center",
         WebkitAlignItems: "center",
@@ -299,5 +303,3 @@ class Home extends React.Component {
 };
 
 export default Home;
-
-

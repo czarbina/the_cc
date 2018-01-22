@@ -8,6 +8,9 @@ var bodyParser = require("body-parser");
 var logger = require("morgan");
 var db = require("./models");
 
+app.set('view engine', 'pug');
+app.set('views', __dirname + '/views');
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({}));

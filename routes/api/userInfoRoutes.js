@@ -3,6 +3,7 @@ var db = require("../../models");
 
 
   router.get("/all", function(req, res) {
+    console.log("all users");
     db.User.findAll({}).then(function(results) {
       console.log(results);
       res.json(results);
@@ -92,7 +93,7 @@ var db = require("../../models");
       zipcode: req.body.zipcode,
       birthday: req.body.birthday,
       photo: req.body.photo
-     
+
     });
   });
 

@@ -9,10 +9,9 @@ const App = () =>
 	<Router>
 		<div>
 			<Nav />
-			<Route exact path="/" component ={Home}/>
+			<Route path="/" component ={Home}/>
 			<Route exact path="/profile" component={Profile}/>
-		</div>	
+		</div>
 	</Router>;
 
 export default App;
- 
