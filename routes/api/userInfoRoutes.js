@@ -10,7 +10,7 @@ var db = require("../../models");
   });
 
 
-  router.get("/:username", function(req, res) {
+  router.get("username/:username", function(req, res) {
     if (req.params.username) {
       db.User.findAll({
         where: {
@@ -96,7 +96,7 @@ var db = require("../../models");
     });
   });
 
-  router.post("/delete", function(req, res) {
+  router.post("/deleteUser", function(req, res) {
     console.log("Book Data:");
     console.log(req.body);
     db.User.destroy({

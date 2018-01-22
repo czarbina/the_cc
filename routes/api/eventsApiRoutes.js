@@ -9,7 +9,7 @@ router.get("/all", function(req, res) {
   });
 
 
-router.get("/:artistName", function(req, res) {
+router.get("artistname/:artistName", function(req, res) {
     if (req.params.artistName) {
       db.Events.findAll({
         where: {
@@ -21,7 +21,7 @@ router.get("/:artistName", function(req, res) {
     }
   });
 
-router.get("/:username", function(req, res) {
+router.get("username/:username", function(req, res) {
     if (req.params.username) {
       db.Events.findAll({
         where: {
@@ -33,7 +33,7 @@ router.get("/:username", function(req, res) {
     }
 });
 
-router.get("/:id", function(req, res) {
+router.get("id/:id", function(req, res) {
     if (req.params.id) {
       db.Events.findAll({
         where: {
@@ -46,14 +46,14 @@ router.get("/:id", function(req, res) {
 });
   
 
-  router.post("/newUser", function(req, res) {
+  router.post("/newEvent", function(req, res) {
     console.log(req.body);
     db.Events.create({
       
     });
   });
 
-  router.post("/delete", function(req, res) {
+  router.post("/deleteEvent", function(req, res) {
     console.log(req.body);
     db.Events.destroy({
       where: {
