@@ -38,7 +38,7 @@ var User = sequelize.define("User", {
 
   birthday: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -46,7 +46,7 @@ var User = sequelize.define("User", {
 
   photo: {
     type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       isUrl: true
 
     }

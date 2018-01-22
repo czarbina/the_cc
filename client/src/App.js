@@ -4,7 +4,6 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 
-
 const App = () =>
 	<Router>
 		<div>
@@ -15,4 +14,3 @@ const App = () =>
 	</Router>;
 
 export default App;
- 

@@ -13,21 +13,27 @@ class Profile extends Component {
 		bio: ""
 	}
 
-	// componentDidMount() {
-	// 	this.loadProfile();
-	// }
+	componentDidMount() {
+		this.loadProfile();
+	}
 
-	// loadProfile = () => {
-	// 	API.getUserData()
-	// 	.then(res =>
-	// 		this.setState({}))
-	// }
+	loadProfile = () => {
+		this.setState({
+			image: "http://espyrock.com/wp-content/uploads/2010/09/Serj-Tankian.jpg",
+			name: "Serj Tankian",
+			username: "serj",
+			bio: "WAKE UP! GRAB A BRUSH AND PUT ON A LITLE MAKEUP!"
+		})
+	}
 
 	render () {
     return (
     	<div>
     	<ProfileCard
-
+    	image="http://espyrock.com/wp-content/uploads/2010/09/Serj-Tankian.jpg"
+		name="Serj Tankian"
+		username= "serj"
+		bio="WAKE UP! GRAB A BRUSH AND PUT ON A LITLE MAKEUP!"
     	/>		  	
     	</div>
     	)
