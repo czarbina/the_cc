@@ -3,15 +3,15 @@ var router = require("express").Router();
 
 
   router.get("/all", function(req, res) {
-    db.UserBio.findAll({}).then(function(results) {
+    db.Userbio.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
 
-  router.get("/:artistName", function(req, res) {
+  router.get("artistname/:artistName", function(req, res) {
     if (req.params.artistName) {
-      db.UserBio.findAll({
+      db.Userbio.findAll({
         where: {
           artistName: req.params.artistName
         }
@@ -21,9 +21,9 @@ var router = require("express").Router();
     }
   });
 
-  router.get("/:bio", function(req, res) {
+  router.get("bio/:bio", function(req, res) {
     if (req.params.bio) {
-      db.UserBio.findAll({
+      db.Userbio.findAll({
         where: {
           bio: req.params.bio
         }
@@ -33,9 +33,9 @@ var router = require("express").Router();
     }
   });
 
-  router.get("/:tag", function(req, res) {
+  router.get("tag/:tag", function(req, res) {
     if (req.params.tag) {
-      db.UserBio.findAll({
+      db.Userbio.findAll({
         where: {
           tag: req.params.tag
         }
@@ -45,9 +45,9 @@ var router = require("express").Router();
     }
   });
 
-  router.post("/newUser", function(req, res) {
+  router.post("/newBio", function(req, res) {
     console.log(req.body);
-    db.UserBio.create({
+    db.Userbio.create({
       artistName: req.body.artistName,
       bio: req.body.bio,
       tags: req.body.tags,
@@ -56,9 +56,9 @@ var router = require("express").Router();
     });
   });
 
-  router.post("/delete", function(req, res) {
+  router.post("/deleteBio", function(req, res) {
     console.log(req.body);
-    db.UserBio.destroy({
+    db.Userbio.destroy({
       where: {
         id: req.body.id
       }
