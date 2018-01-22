@@ -86,12 +86,13 @@ var db = require("../../models");
     console.log(req.body);
     db.User.create({
       name: req.body.name,
-      emailAddress: req.body.emailAddress,
+      username: req.body.username,
+      emailAddress: req.body.email,
       password: req.body.password,
       zipcode: req.body.zipcode,
-      birthday: req.body.birthday,
-      photo: req.body.photo
-     
+      birthday: req.body.dob     
+    }).then(function(results){
+      res.json(results);
     });
   });
 

@@ -4,6 +4,7 @@ import { Parallax, Background } from 'react-parallax';
 import { render } from 'react-dom';
 import { Link } from "react-router-dom";
 import { Button, Card, Row, Col, Icon } from 'react-materialize';
+import axios from "axios";
 import ReactModal from 'react-modal';
 import share from "./001-brush.png";
 import connect from "./003-pencil.png";
@@ -13,12 +14,22 @@ const painter = "http://sicklesmarket.com/sites/default/files/images/event/sickl
 const musician = "https://media.pulseradio.net/media/transfer/img/articleimage/2016-02/tech_house_main.png";
 const graffiti = "https://www.olivet.edu/sites/default/files/images/page-blocks/trowel-paint.jpg";
 
+ReactModal.setAppElement('#root');
+
 class Home extends React.Component { 
 
     constructor () {
     super();
     this.state = {
-      showModal: false 
+      showModal: false,
+      name: "",
+      email: "",
+      username: "",
+      password: "",
+      password_conf: "",
+      zipcode: "",
+      dob: ""
+
     };
     
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -29,26 +40,62 @@ class Home extends React.Component {
     this.setState({ showModal: true });
   }
   
-  handleCloseModal () {
+  handleCloseModal (e) {
+    e.preventDefault();
     this.setState({ showModal: false });
-  }
+  
+    console.log(this.state);
+    console.log("Heeey1");
+    if (this.state.password===this.state.password_conf) {
+    axios.post('/user/newUser', this.state)
+          .then((result) => {
+            console.log("Heeey2");
+            console.log(result);
+        });
+      }
+
+      else {
+        alert("Nawwwww!");
+      }
+
+      this.setState({name: "",
+      email: "",
+      username: "",
+      password: "",
+      password_conf: "",
+      zipcode: "",
+      dob: ""});
+    }
 
   shouldCloseOnOverlayClick () {
     this.setState({ showModal: false })
   }
 
-  // submitReg(event) {
-  //   event.preventDefault();
-  //   const data = new FormData(event.target);
-  //   console.log(data);
-    
-  //   // fetch('', {
-  //   //   method: 'POST',
-  //   //   body: data,
-  //   // });
-  // }
+  onChange = (e) => {
+    const state = this.state
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+
+
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    console.log("Heeey1");
+
+    const { name, email, username, password, password_conf, zipcode, dob } = this.state;
+    console.log(`Password:${this.state.password} and Confirm: ${this.state.password_conf}`);
+
+    axios.post('/user/newUser', { name, email, username, password, password_conf, zipcode, dob })
+          .then((result) => {
+            console.log("Heeey2");
+            console.log(result);
+        });
+    }
 
   render () {
+    const { name, email, username, password, password_conf, zipcode, dob} = this.state;
+
     return (
   <div>
    
@@ -99,51 +146,94 @@ class Home extends React.Component {
             <div className="modal-content">
               <h4 style={{color:"#7986cb", textAlign: "center"}}>Registration</h4>
               <form className="col s12" onSubmit={this.submitReg}>
+
+
                 <Row>
-                  <Col s={6} className="input-field">
-                    <input id="first_name" type="text" className="validate"></input>
-                    <label for="first_name">First Name</label>
-                  </Col>
-                  <Col s={6} className="input-field">
-                    <input id="last_name" type="text" className="validate"></input>
-                    <label for="last_name">Last Name</label>
+                  <Col s={12} className="input-field">
+                    <input 
+                      name="name" 
+                      type="text" 
+                      className="validate" 
+                      value={this.state.name}
+                      onChange={this.onChange}>
+                    </input>
+                    <label for="name">Name</label>
                   </Col>
                 </Row>
                 <Row>
                   <Col s={12} className="input-field">
-                    <input id="email" type="email" className="validate"></input>
+                    <input 
+                      name="email" 
+                      type="email" 
+                      className="validate"
+                      value={this.state.email}
+                      onChange={this.onChange}>
+                    </input>
                     <label for="email">Email</label>
                   </Col>
                 </Row>
                 <Row>
-                  <Col s={6} className="input-field">
-                    <input id="username" type="text" className="validate"></input>
+                  <Col s={12} className="input-field">
+                    <input 
+                      name="username" 
+                      type="text" 
+                      className="validate"
+                      value={this.state.username}
+                      onChange={this.onChange}>
+                    </input>
                     <label for="username">Username</label>
                   </Col>
                   <Col s={6} className="input-field">
-                    <input id="password" type="password" className="validate"></input>
+                    <input 
+                      name="password" 
+                      type="password" 
+                      className="validate"
+                      value={this.state.password}
+                      onChange={this.onChange}>
+                    </input>
+                    <label for="password">Password</label>
+                  </Col>
+                  <Col s={6} className="input-field">
+                    <input 
+                      name="password_conf" 
+                      type="password" 
+                      className="validate"
+                      value={this.state.password_conf}
+                      onChange={this.onChange}>
+                      </input>
                     <label for="password">Password</label>
                   </Col>
                 </Row>
                 <Row>
                   <Col s={6} className="input-field">
-                    <input id="dob" type="text" className="validate"></input>
+                    <input 
+                      name="dob" 
+                      type="text" 
+                      className="validate"
+                      value={this.state.dob}
+                      onChange={this.onChange}>
+                    </input>
                     <label for="dob">Birthday (DDMMYYYY)</label>
                   </Col>
                   <Col s={6} className="input-field">
-                    <input id="zipcode" type="text" className="validate"></input>
+                    <input 
+                      name="zipcode" 
+                      type="text" 
+                      className="validate"
+                      value={this.state.zipcode}
+                      onChange={this.onChange}></input>
                     <label for="zipcode">Zipcode</label>
                   </Col>
                 </Row>
                 <Row> 
                   <Col s={6}>
-                    <Link to="/profile">
+                    
                     <Button 
                       href="#!" 
                       id="regBtn" 
-                      className="btn-large waves-effect waves-light #7986cb indigo lighten-2" 
+                      className="btn-large waves-effect waves-light #7986cb indigo lighten-2"
+                      type="submit" 
                       onClick={this.handleCloseModal}>SUBMIT</Button>
-                      </Link>
                   </Col>
                 </Row>
               </form>

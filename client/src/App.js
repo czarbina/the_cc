@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Browse from "./components/Browse"
 
-
 const App = () =>
 	<Router>
 		<div>
@@ -17,4 +16,3 @@ const App = () =>
 	</Router>;
 
 export default App;
- 

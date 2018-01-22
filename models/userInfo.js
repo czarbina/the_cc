@@ -38,7 +38,7 @@ var User = sequelize.define("User", {
 
   birthday: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
