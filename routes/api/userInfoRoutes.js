@@ -1,6 +1,6 @@
 var router = require("express").Router();
 var db = require("../../models");
-
+var randToken = require("rand-token");
 
   router.get("/all", function(req, res) {
     db.User.findAll({}).then(function(results) {
@@ -105,5 +105,57 @@ var db = require("../../models");
       }
     });
   });
+
+  router.get("/login", function(req, res) {
+    var username = req.query.username;
+    var password = req.query.password;
+
+    db.User.findAll({
+      where: {
+        username: username
+      }
+    }).then(function(loginCredentials) {
+      if(loginCredentials[0]){
+        if(password === loginCredentials[0].password){
+          var token = randToken.generate(16);
+          var userId = loginCredentials[0].id;
+          var putQuery = "authToken/" + userId;
+           
+          // ========= Add authToken to user info in DB ========
+          db.User.update({
+            authToken: token
+          },
+          {
+            where: {
+              id: userId
+            }
+          });
+          res.cookie('authToken', token);
+          res.json(loginCredentials);
+        } else{
+          res.end();
+        };
+      
+      } else {
+        res.json(loginCredentials);
+
+      }
+    });
+    });
+
+
+  router.get("/checkLogin", function(req, res) {
+    var authToken = req.query.authToken;
+
+    db.User.findAll({
+      where: {
+        authToken: authToken
+      }
+    }).then(function(response) {
+      console.log(response);
+      });
+    });
+
+
 
   module.exports  = router;

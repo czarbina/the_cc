@@ -49,6 +49,10 @@ var User = sequelize.define("User", {
       allowNull: true,
       isUrl: true
 
+    },
+    authToken: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
 }, {
   timestamps: false
