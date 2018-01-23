@@ -18,15 +18,14 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "cors-prefetch-middleware": "^1.0.0",
     "express": "^4.15.4",
+    "images-upload-middleware": "^1.1.1",
     "moment": "^2.20.1",
     "morgan": "^1.9.0",
     "mysql2": "^1.5.1",
-<<<<<<< HEAD
     "rand-token": "^0.4.0",
-=======
     "react-big-calendar": "^0.17.0",
->>>>>>> user_data_population
     "sequelize": "^4.31.2"
   }
 }

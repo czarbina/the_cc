@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes");
 
+
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var db = require("./models");
@@ -19,7 +20,6 @@ app.use(routes);
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
 
 db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {

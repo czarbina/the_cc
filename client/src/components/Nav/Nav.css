@@ -5,7 +5,7 @@
     right: 40px;
     bottom: 40px;
     width: 60%;
-    height: 90%;
+    height: 50%;
     margin: auto;
     padding: 10px;
     background-color: white;
@@ -23,6 +23,10 @@
 
   .modal-content {
     margin: 20px;
+  }
+
+  #loginModal {
+    height: 50%;
   }
 
   /*#regBtn {

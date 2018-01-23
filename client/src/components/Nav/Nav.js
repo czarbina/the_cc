@@ -2,11 +2,10 @@ import React from "react";
 import { Navbar, NavItem } from 'react-materialize';
 import { Link } from "react-router-dom";
 import "./Nav.css";
-import { Button, Card, Row, Col, Icon } from 'react-materialize';
+import { Button, Row, Col } from 'react-materialize';
 import axios from "axios";
 import ReactModal from 'react-modal';
   
-
 class Nav extends React.Component { 
 
     constructor () {
@@ -34,9 +33,9 @@ class Nav extends React.Component {
     this.submitLog();
   }
 
-  // shouldCloseOnOverlayClick () {
-  //   this.setState({ showModal: false })
-  // }
+  shouldCloseOnOverlayClick () {
+    this.setState({ showModal: false })
+  }
 
   onChangeUsername = (e) => {
     e.preventDefault();
@@ -92,7 +91,8 @@ class Nav extends React.Component {
            id="loginModal"
            className="Modal"
            overlayClassName="Overlay"
-           // onRequestClose={this.handleCloseModal}
+           onRequestClose={this.handleCloseModal}
+           style={{height:"50%"}}
           >
           
             <div className="modal-content">

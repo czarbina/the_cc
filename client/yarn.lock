@@ -5262,6 +5262,10 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
+react-file-input@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/react-file-input/-/react-file-input-0.2.5.tgz#a355367d9323d5c6352ddd3cd7ec3582e5c9b245"
+
 react-material-icons@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/react-material-icons/-/react-material-icons-1.0.3.tgz#8974b06e00e20f60f21abe94b5d6db07f8a391d9"
