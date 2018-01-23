@@ -1,9 +1,7 @@
 import React from "react";
 import "./Home.css";
-import { Parallax, Background } from 'react-parallax';
-import { render } from 'react-dom';
-import { Link } from "react-router-dom";
-import { Button, Card, Row, Col, Icon } from 'react-materialize';
+import { Parallax } from 'react-parallax';
+import { Button, Row, Col } from 'react-materialize';
 import axios from "axios";
 import ReactModal from 'react-modal';
 import share from "./001-brush.png";
@@ -40,31 +38,8 @@ class Home extends React.Component {
     this.setState({ showModal: true });
   }
   
-  handleCloseModal (e) {
-    e.preventDefault();
+  handleCloseModal () {
     this.setState({ showModal: false });
-  
-    console.log(this.state);
-    console.log("Heeey1");
-    if (this.state.password===this.state.password_conf) {
-    axios.post('/user/newUser', this.state)
-          .then((result) => {
-            console.log("Heeey2");
-            console.log(result);
-        });
-      }
-
-      else {
-        alert("Nawwwww!");
-      }
-
-      this.setState({name: "",
-      email: "",
-      username: "",
-      password: "",
-      password_conf: "",
-      zipcode: "",
-      dob: ""});
     }
 
   shouldCloseOnOverlayClick () {
@@ -80,21 +55,35 @@ class Home extends React.Component {
   }
 
   onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault();  
+    console.log(this.state);
     console.log("Heeey1");
-
-    const { name, email, username, password, password_conf, zipcode, dob } = this.state;
-    console.log(`Password:${this.state.password} and Confirm: ${this.state.password_conf}`);
-
-    axios.post('/user/newUser', { name, email, username, password, password_conf, zipcode, dob })
+    if (this.state.password===this.state.password_conf) {
+    axios.post('/user/newUser', this.state)
           .then((result) => {
             console.log("Heeey2");
             console.log(result);
+            this.setState({ showModal: false });
+
         });
+      }
+
+      else {
+        alert("Nawwwww!");
+        this.setState({ showModal: true });
+
+      }
+
+      this.setState({name: "",
+      email: "",
+      username: "",
+      password: "",
+      password_conf: "",
+      zipcode: "",
+      dob: ""});
     }
 
   render () {
-    const { name, email, username, password, password_conf, zipcode, dob} = this.state;
 
     return (
   <div>
@@ -111,10 +100,6 @@ class Home extends React.Component {
           lineHeight: 0, 
           height: "auto", 
           color: "#ffffffff",
-          display: "-webkit-box",
-          display: "-webkit-flex",
-          display: "-ms-flexbox",
-          display: "flex",
           WebkitBoxAlign: "center",
           WebkitAlignItems: "center",
           msFlexAlign: "center",
@@ -233,7 +218,7 @@ class Home extends React.Component {
                       id="regBtn" 
                       className="btn-large waves-effect waves-light #7986cb indigo lighten-2"
                       type="submit" 
-                      onClick={this.handleCloseModal}>SUBMIT</Button>
+                      onClick={this.onSubmit}>SUBMIT</Button>
                   </Col>
                 </Row>
               </form>
@@ -250,14 +235,14 @@ class Home extends React.Component {
       <Row>
         <Col s={12} m={4}>
             <h2 className="center brown-text">
-            <img src={share}></img></h2>
+            <img src={share} alt=""></img></h2>
             <h5 className="center">Exhibit and curate your work</h5>
             <p className="light">The Creative Collective serves as a gallery, a stage, a or a booking agent to help showcase your creative body of work on a virtual platform. Create and manage your art, music, videos, or writings through easy to build profiles.</p>
         </Col>
 
         <Col s={12} m={4}>
             <h2 className="center brown-text">
-              <img src={connect}></img></h2>
+              <img src={connect} alt=""></img></h2>
             <h5 className="center">Connect and collaborate with other artists</h5>
             <p className="light">Need a drummer? Perhaps you can find the John Bohnham to your Jimmy Page in our vast network of musicians. Looking to collaboate with another mural artist on a large outdoor piece? Here's the place to find them.</p>
         </Col>
@@ -265,7 +250,7 @@ class Home extends React.Component {
         <Col s={12} m={4}>
           <div className="icon-block">
             <h2 className="center brown-text">       
-            <img src={success}></img></h2>
+            <img src={success} alt=""></img></h2>
             <h5 className="center">Book gigs and sell your work.</h5>
             <p className="light">You're a DJ? Use the calendar.. blablabla</p>
           </div>
@@ -379,7 +364,7 @@ class Home extends React.Component {
     </div>
     <div className="footer-copyright">
       <div className="container">
-      Made by <a className="brown-text text-lighten-3" href="#">Sabrina</a>
+      Made by <a className="brown-text text-lighten-3" href="/">Sabrina</a>
       </div>
     </div>
   </footer>
