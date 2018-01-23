@@ -1,0 +1,48 @@
+.container{
+	width:95%;
+}
+
+.card{
+	
+	padding: 15px;
+	margin: 17px;
+	background-color: rgba(121, 134, 203, 0.3);
+	float: left;
+	-webkit-box-shadow: 0px 0px 48px -1px rgba(121,121,133,1);
+	-moz-box-shadow: 0px 0px 48px -1px rgba(121,121,133,1);
+	box-shadow: 0px 0px 48px -1px rgba(121,121,133,1);
+	height: 250px;
+
+}
+
+.content{
+
+	margin:10px;
+	font-size: 18px;
+	font-weight: solid;
+	color: black;
+	float: right;
+	position: relative;
+	top: -40px;
+
+}
+
+.bio{
+	float: right;
+	width: 80%;
+	word-wrap: auto;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: black;
+}
+
+.image{
+	border-style: solid;
+	border: 5px;
+	width: 200px;
+	height: 200px;
+	-webkit-box-shadow: 17px 9px 20px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 17px 9px 20px 0px rgba(0,0,0,0.75);
+	box-shadow: 17px 9px 20px 0px rgba(0,0,0,0.75);
+
+}

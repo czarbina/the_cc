@@ -13,6 +13,9 @@ return (
 
 	<Row>
 		<Col s={4}>
+  
+			<Card className='extra-large'
+
 			
 			<Card className='extra-large z-depth-5'
 				style= {{
@@ -21,6 +24,7 @@ return (
     				left: "40",
     				width: "300px"
     				}}
+
 
 				header={<CardTitle image={props.image}
 				>{props.username}
