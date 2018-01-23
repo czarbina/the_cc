@@ -45,7 +45,7 @@ var router = require("express").Router();
     }
   });
 
-  router.post("/newBio", function(req, res) {
+  router.post("/createProfile", function(req, res) {
     console.log(req.body);
     db.Userbio.create({
       artistName: req.body.artistName,
@@ -63,6 +63,16 @@ var router = require("express").Router();
         id: req.body.id
       }
     });
+  });
+
+  router.get("/artistProfile", function(req, res) {
+      db.Userbio.findOne({
+        where: {
+          id: 3
+        }
+      }).then(function(results) {
+        res.json(results);
+      });
   });
 
   module.exports = router;

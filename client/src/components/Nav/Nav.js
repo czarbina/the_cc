@@ -6,15 +6,23 @@ import { Link } from "react-router-dom";
 const Nav = () => (
 
   <div>
-    <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2"> 
+    <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2">
       <NavItem>
         <Link to="/profile">LOGIN</Link>
-
       </NavItem>
-      
+
       <NavItem>
         <Link to="/browse">BROWSE</Link>
       </NavItem>
+
+      <NavItem>
+        <Link to="/artistProfile">MY PROFILE</Link>
+      </NavItem>
+
+      <NavItem>
+        <Link to="/createProfile">CREATE PROFILE</Link>
+      </NavItem>
+
         <ul id="nav-mobile" className="side-nav">
           <li><a href="#">Navbar Link</a></li>
         </ul>
@@ -22,4 +30,4 @@ const Nav = () => (
     </Navbar>
    </div>);
 
-export default Nav;    
+export default Nav;
