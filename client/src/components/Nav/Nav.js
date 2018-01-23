@@ -100,28 +100,35 @@ class Nav extends React.Component {
               color="#841584"
               onClick={this.handleOpenModal}
             >LOGIN</Button>
-
           </NavItem>
 
-          <Button
-            className="navButton"
-          >
-            <Link to="/browse">BROWSE</Link>
-          </Button>
+          <NavItem>
+            <Button
+              className="navButton"
+            ><Link to="/browse">BROWSE</Link>
+            </Button>
+          </NavItem>
 
+          <NavItem>
+            <Button
+              className={this.state.loggedIn ? 'navButton' : 'invisible'}
+              ><Link to="/profile">MY PROFILE</Link>
+            </Button>
+          </NavItem>
 
-                <NavItem>
-                  <Link to="/artistProfile">MY PROFILE</Link>
-                </NavItem>
+          <NavItem>
+            <Button
+              className={this.state.loggedIn ? 'navButton' : 'invisible'}
+              ><Link to="/createProfile">EDIT PROFILE</Link>
+            </Button>
+          </NavItem>
 
-                <NavItem>
-                  <Link to="/createProfile">CREATE PROFILE</Link>
-                </NavItem>
           <NavItem>
             <Button
               className={this.state.loggedIn ? 'navButton' : 'invisible'}
               onClick={this.logout}
-              >Logout</Button>
+              >Logout
+              </Button>
           </NavItem>
 
           <ul id="nav-mobile" className="side-nav">
