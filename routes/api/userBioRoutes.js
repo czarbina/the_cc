@@ -60,16 +60,16 @@ var router = require("express").Router();
       }
     });
   });
-  router.post("/createProfile", function(req, res) {
-    console.log(req.body);
-    db.Userbio.create({
-      artistName: req.body.artistName,
-      bio: req.body.bio,
-      tags: req.body.tags,
-      links: req.body.links,
-      coverphoto: req.body.coverphoto
-    });
-  });
+  // router.post("/createProfile", function(req, res) {
+  //   console.log(req.body);
+  //   db.Userbio.create({
+  //     artistName: req.body.artistName,
+  //     bio: req.body.bio,
+  //     tags: req.body.tags,
+  //     links: req.body.links,
+  //     coverphoto: req.body.coverphoto
+  //   });
+  // });
   // router.get("/artistProfile", function(req, res) {
   //     db.Userbio.findOne({
   //       where: {
@@ -80,11 +80,34 @@ var router = require("express").Router();
   //     });
   //   }
   // });
+  router.post("/createProfile", function(req, res) {
+    if(req.headers.cookie){
+      var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
+
+    console.log(req.body);
+    db.Userbio.update({
+      artistName: req.body.artistName,
+      bio: req.body.bio,
+      tags: req.body.tags,
+      links: req.body.links,
+      coverphoto: req.body.coverphoto
+    },
+    {
+     where: {
+      authToken: authToken
+    }
+    });
+
+  }else{
+    res.send("false");
+  }
+  });
+
   router.get("/artistProfile", function(req, res) {
-    console.log("heyyy");
+var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
       db.Userbio.findOne({
         where: {
-          id: 1
+        authToken: authToken
         }
       }).then(function(results) {
         res.json(results);
