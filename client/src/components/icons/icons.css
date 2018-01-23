@@ -1,0 +1,6 @@
+.invisible {
+  display: none;
+}
+.visible {
+  height: 50px;
+}
