@@ -8,7 +8,6 @@ var router = require("express").Router();
     });
   });
 
-
   router.get("artistname/:artistName", function(req, res) {
     if (req.params.artistName) {
       db.Userbio.findAll({
@@ -64,5 +63,16 @@ var router = require("express").Router();
       }
     });
   });
+
+  router.get("/artistProfile", function(req, res) {
+      db.Userbio.findOne({
+        where: {
+          artistName: req.params.artistName
+        }
+      }).then(function(results) {
+        res.json(results);
+      });
+    });
+
 
   module.exports = router;
