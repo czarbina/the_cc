@@ -7,9 +7,14 @@ return (
 <div className="container" style={{width:"80%"}}>
 	<Row>
 		<Col s={4}>
+			<Row>
+				Things
+			</Row>
 			<Card className='extra-large'
-				header={<CardTitle image={props.image}>{props.username}</CardTitle>}
-				actions={[<a href='#'>CONTACT</a>]}>
+				header={<CardTitle image={props.image}
+				style={{height:"40%"}}>{props.username}
+				</CardTitle>}
+				>
 				<p>Name: {props.name}</p>
 				<p>About me: {props.bio}</p>
 			</Card>  
