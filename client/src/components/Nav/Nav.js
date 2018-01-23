@@ -25,9 +25,11 @@ class Nav extends React.Component {
   componentDidMount() {
     var userToken = document.cookie.slice(10, document.cookie.length);
     axios.get("user/checkLogin", {authToken:userToken}).then(response => {
-      if(userToken === response.data[0].authToken){
-        this.setState({loggedIn: true});
-      }else {
+      if(response.data[0]){
+        if(userToken === response.data[0].authToken){
+          this.setState({loggedIn: true});
+        }
+      } else {
         this.setState({loggedIn: false});
       }
     });

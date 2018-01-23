@@ -46,13 +46,10 @@ var router = require("express").Router();
   });
 
   router.post("/newBio", function(req, res) {
-    console.log(req.body);
+    var username = req.body.username;
+    console.log(`USERNAME: ${username}`);
     db.Userbio.create({
-      artistName: req.body.artistName,
-      bio: req.body.bio,
-      tags: req.body.tags,
-      links: req.body.links,
-      coverphoto: req.body.coverphoto
+      username: username
     });
   });
 

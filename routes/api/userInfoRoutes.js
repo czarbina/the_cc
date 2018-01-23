@@ -130,6 +130,16 @@ var randToken = require("rand-token");
               id: userId
             }
           });
+
+           db.Userbio.update({
+            authToken: token
+          },
+          {
+            where: {
+            username: username
+            }
+          });
+
           res.cookie('authToken', token);
           res.json(loginCredentials);
         } else{
@@ -145,7 +155,12 @@ var randToken = require("rand-token");
 
 
   router.get("/checkLogin", function(req, res) {
-    var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
+    console.log(`Cookie: ${req.headers.cookie}`);
+    if(req.headers.cookie !== undefined){
+      var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
+    }else {
+      console.log(req.headers.cookie);
+    }
 
     db.User.findAll({
       where: {

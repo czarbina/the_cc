@@ -3,6 +3,14 @@ module.exports = function(sequelize, DataTypes) {
 var Userbio = sequelize.define("Userbio", {
   artistName: {
       type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1]
+      }
+    },
+
+  username: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
@@ -11,7 +19,7 @@ var Userbio = sequelize.define("Userbio", {
 
   bio: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -39,7 +47,15 @@ var Userbio = sequelize.define("Userbio", {
       allowNull: true,
       isUrl: true
   // validate they are of legal age to use our service
-  }
+  },
+
+  authToken: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1]
+      }
+    },
 }, {
   timestamps: false
 });
