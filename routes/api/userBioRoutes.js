@@ -8,7 +8,6 @@ var router = require("express").Router();
     });
   });
 
-
   router.get("artistname/:artistName", function(req, res) {
     if (req.params.artistName) {
       db.Userbio.findAll({
@@ -46,13 +45,10 @@ var router = require("express").Router();
   });
 
   router.post("/newBio", function(req, res) {
-    console.log(req.body);
+    var username = req.body.username;
+    console.log(`USERNAME: ${username}`);
     db.Userbio.create({
-      artistName: req.body.artistName,
-      bio: req.body.bio,
-      tags: req.body.tags,
-      links: req.body.links,
-      coverphoto: req.body.coverphoto
+      username: username
     });
   });
 
@@ -64,5 +60,36 @@ var router = require("express").Router();
       }
     });
   });
+  router.post("/createProfile", function(req, res) {
+    console.log(req.body);
+    db.Userbio.create({
+      artistName: req.body.artistName,
+      bio: req.body.bio,
+      tags: req.body.tags,
+      links: req.body.links,
+      coverphoto: req.body.coverphoto
+    });
+  });
+  // router.get("/artistProfile", function(req, res) {
+  //     db.Userbio.findOne({
+  //       where: {
+  //         artistName: req.params.artistName
+  //       }
+  //     }).then(function(results) {
+  //       res.json(results);
+  //     });
+  //   }
+  // });
+  router.get("/artistProfile", function(req, res) {
+    console.log("heyyy");
+      db.Userbio.findOne({
+        where: {
+          id: 1
+        }
+      }).then(function(results) {
+        res.json(results);
+      });
+  });
+
 
   module.exports = router;

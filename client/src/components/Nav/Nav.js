@@ -5,9 +5,9 @@ import "./Nav.css";
 import { Button, Card, Row, Col, Icon } from 'react-materialize';
 import axios from "axios";
 import ReactModal from 'react-modal';
-  
 
-class Nav extends React.Component { 
+
+class Nav extends React.Component {
 
     constructor () {
     super();
@@ -17,7 +17,7 @@ class Nav extends React.Component {
       password: "",
       loggedIn: false
     };
-    
+
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
@@ -25,20 +25,22 @@ class Nav extends React.Component {
   componentDidMount() {
     var userToken = document.cookie.slice(10, document.cookie.length);
     axios.get("user/checkLogin", {authToken:userToken}).then(response => {
-      if(userToken === response.data[0].authToken){
-        this.setState({loggedIn: true});
-      }else {
+      if(response.data[0]){
+        if(userToken === response.data[0].authToken){
+          this.setState({loggedIn: true});
+        }
+      } else {
         this.setState({loggedIn: false});
       }
     });
   }
-  
+
   handleOpenModal (e) {
     e.preventDefault();
     console.log("open");
     this.setState({ showModal: true });
   }
-  
+
   handleCloseModal (e) {
     e.preventDefault();
     console.log("close");
@@ -71,7 +73,7 @@ class Nav extends React.Component {
           this.setState({loggedIn: true});
           console.log(this.state);
           window.location.href = "/profile";
-        } 
+        }
       } else{
         alert("Login Error. Please try again.");
       }
@@ -91,22 +93,33 @@ class Nav extends React.Component {
   render () {
     return (
       <div>
-        <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2"> 
+        <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2">
           <NavItem>
             <Button
+              className={this.state.loggedIn ? 'invisible' : 'navButton'}
               color="#841584"
               onClick={this.handleOpenModal}
             >LOGIN</Button>
 
           </NavItem>
-      
-          <NavItem>
-            <Link to="/browse">BROWSE</Link>
-          </NavItem>
 
+          <Button
+            className="navButton"
+          >
+            <Link to="/browse">BROWSE</Link>
+          </Button>
+
+
+                <NavItem>
+                  <Link to="/artistProfile">MY PROFILE</Link>
+                </NavItem>
+
+                <NavItem>
+                  <Link to="/createProfile">CREATE PROFILE</Link>
+                </NavItem>
           <NavItem>
             <Button
-              className={this.state.loggedIn ? '' : 'invisible'}
+              className={this.state.loggedIn ? 'navButton' : 'invisible'}
               onClick={this.logout}
               >Logout</Button>
           </NavItem>
@@ -117,7 +130,7 @@ class Nav extends React.Component {
         <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
     </Navbar>
 
-     <ReactModal 
+     <ReactModal
            isOpen={this.state.showModal}
            contentLabel="Login"
            id="loginModal"
@@ -125,16 +138,16 @@ class Nav extends React.Component {
            overlayClassName="Overlay"
            // onRequestClose={this.handleCloseModal}
           >
-          
+
             <div className="modal-content">
               <h4 style={{color:"#7986cb", textAlign: "center"}}>Login</h4>
               <form className="col s12" onSubmit={this.submitLog}>
-          
+
                 <Row>
                   <Col s={12} className="input-field">
-                    <input 
-                      name="username" 
-                      type="text" 
+                    <input
+                      name="username"
+                      type="text"
                       className="validate"
                       // value={this.state.username}
                       onChange={this.onChangeUsername}>
@@ -143,9 +156,9 @@ class Nav extends React.Component {
                   </Col>
 
                   <Col s={12} className="input-field">
-                    <input 
-                      name="password" 
-                      type="password" 
+                    <input
+                      name="password"
+                      type="password"
                       className="validate"
                       // value={this.state.password}
                       onChange={this.onChangePassword}>
@@ -154,13 +167,13 @@ class Nav extends React.Component {
                   </Col>
                 </Row>
 
-                <Row> 
+                <Row>
                   <Col s={12}>
-                    <Button 
-                      href="#!" 
-                      id="regBtn" 
+                    <Button
+                      href="#!"
+                      id="regBtn"
                       className="btn-large waves-effect waves-light #7986cb indigo lighten-2"
-                      type="submit" 
+                      type="submit"
                       onClick={this.handleCloseModal}>SUBMIT</Button>
                   </Col>
                 </Row>
@@ -173,6 +186,3 @@ class Nav extends React.Component {
 };
 
 export default Nav;
-
-
-
