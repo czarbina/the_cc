@@ -14,7 +14,11 @@ class createProfile extends Component {
 		bio: "",
 		tags: "",
 		links: "",
-		coverphoto: ""
+    links2: "",
+    links3: "",
+		coverphoto: "",
+    facebook:"",
+    soundcloud:""
 	};
 
   handleInputChange = event => {
@@ -31,7 +35,11 @@ class createProfile extends Component {
         bio: this.state.bio,
         tags: this.state.tags,
         links: this.state.links,
-        coverphoto: this.state.coverphoto
+        links2: this.state.links2,
+        links3: this.state.links3,
+        coverphoto: this.state.coverphoto,
+        facebook: this.state.facebook,
+        soundcloud: this.state.soundcloud
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -49,31 +57,55 @@ class createProfile extends Component {
                 value={this.state.artistName}
                 onChange={this.handleInputChange}
                 name="artistName"
-                placeholder={this.state.artistName}
+                placeholder="Artist Name"
               />
               <Input
                 value={this.state.tags}
                 onChange={this.handleInputChange}
                 name="tags"
-                placeholder={this.state.tags}
+                placeholder="Tags"
               />
               <TextArea
                 value={this.state.bio}
                 onChange={this.handleInputChange}
                 name="bio"
-                placeholder={this.state.bio}
+                placeholder="Bio"
               />
               <Input
                 value={this.state.links}
                 onChange={this.handleInputChange}
                 name="links"
-                placeholder={this.state.links}
+                placeholder="Link (Soundcloud Embed src)"
               />
               <Input
-                value={this.state.links}
+                value={this.state.links2}
+                onChange={this.handleInputChange}
+                name="links2"
+                placeholder="Link (Soundcloud Embed src)"
+              />
+              <Input
+                value={this.state.links3}
+                onChange={this.handleInputChange}
+                name="links3"
+                placeholder="Link (Soundcloud Embed src)"
+              />
+              <Input
+                value={this.state.coverphoto}
                 onChange={this.handleInputChange}
                 name="coverphoto"
-                placeholder={this.state.links}
+                placeholder="Image Link"
+              />
+              <Input
+                value={this.state.soundcloud}
+                onChange={this.handleInputChange}
+                name="soundcloud"
+                placeholder="Link to Soundcloud"
+              />
+              <Input
+                value={this.state.facebook}
+                onChange={this.handleInputChange}
+                name="facebook"
+                placeholder="Link to Facebook"
               />
               <FormBtn
                 disabled={!(this.state.artistName)}
