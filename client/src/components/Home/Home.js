@@ -66,6 +66,14 @@ class Home extends React.Component {
             this.setState({ showModal: false });
 
         });
+
+    // Write a route in userBioRoutes.js with this name.  It should, first, check the user
+    //bio table for a matching username.  if username doesn't exist, create it.  If it does exist,
+    //respond with an error
+    //!!!! update login function to add authToken to userBio table
+    axios.post("bio/newBio", this.state).then((response) => {
+      console.log(response);
+    });
       }
 
       else {
