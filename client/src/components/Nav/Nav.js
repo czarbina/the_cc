@@ -94,19 +94,22 @@ class Nav extends React.Component {
         <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2"> 
           <NavItem>
             <Button
+              className={this.state.loggedIn ? 'invisible' : 'navButton'}
               color="#841584"
               onClick={this.handleOpenModal}
             >LOGIN</Button>
 
           </NavItem>
       
-          <NavItem>
+          <Button
+            className="navButton"
+          >
             <Link to="/browse">BROWSE</Link>
-          </NavItem>
+          </Button>
 
           <NavItem>
             <Button
-              className={this.state.loggedIn ? '' : 'invisible'}
+              className={this.state.loggedIn ? 'navButton' : 'invisible'}
               onClick={this.logout}
               >Logout</Button>
           </NavItem>
