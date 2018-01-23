@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from 'react-dom';
 import { Navbar, NavItem } from 'react-materialize';
 import { Link } from "react-router-dom";
 import "./Nav.css";
@@ -85,11 +84,7 @@ class Nav extends React.Component {
           <NavItem>
             <Link to="/browse">BROWSE</Link>
           </NavItem>
-          <ul id="nav-mobile" className="side-nav">
-            <li><a href="#">Navbar Link</a></li>
-          </ul>
-        <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
-    </Navbar>
+        </Navbar>
 
      <ReactModal 
            isOpen={this.state.showModal}

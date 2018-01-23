@@ -1,9 +1,6 @@
 import React, {Component} from "react";
-import Nav from "../Nav";
 import ProfileCard from "../ProfileCard";
-import { render } from 'react-dom';
-import { Row, Col } from 'react-materialize';
-
+import axios from "axios";
 
 class Profile extends Component {
 	state = {
@@ -18,11 +15,9 @@ class Profile extends Component {
 	}
 
 	loadProfile = () => {
-		this.setState({
-			image: "http://espyrock.com/wp-content/uploads/2010/09/Serj-Tankian.jpg",
-			name: "Serj Tankian",
-			username: "serj",
-			bio: "WAKE UP! GRAB A BRUSH AND PUT ON A LITLE MAKEUP!"
+		axios.get('/user/id/:id', this.state)
+			.then((result) => {
+				console.log(result);
 		})
 	}
 
@@ -34,7 +29,8 @@ class Profile extends Component {
 		name="Serj Tankian"
 		username= "serj"
 		bio="WAKE UP! GRAB A BRUSH AND PUT ON A LITLE MAKEUP!"
-    	/>		  	
+    	/>	
+
     	</div>
     	)
 	}
