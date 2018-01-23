@@ -1,21 +1,25 @@
 import React from "react";
 import Browse from "../Browse/Browse";
-
+import "./BrowseMap.css";
 
 
 const BrowseMap = props => (
-  <ul className="cardGroup">
+  <div className="container">
+    <ul className="cardGroup">
       {props.Artists.map(item=>(
         <li className="card" key={item.id}>
-         <img alt={item.artistName} src={item.image} />
+         <img className="image" alt={item.artistName} src={item.image}/>
+          <div className="bio">
+          <li> {item.bio} </li>
+          </div>
           <div className="content">
-          <strong>Artist:</strong> {item.artistName}
-          <strong>About:</strong> {item.bio}
-          <strong>Link:</strong> {item.link}
+          <li> {item.artistName} </li>
+          <li> {item.link} </li>
           </div>
         </li>
         ))}
       </ul>
+    </div>
 );
 
 

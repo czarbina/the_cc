@@ -7,9 +7,6 @@ return (
 <div className="container" style={{width:"80%"}}>
 	<Row>
 		<Col s={4}>
-			<Row>
-				Things
-			</Row>
 			<Card className='extra-large'
 				header={<CardTitle image={props.image}
 				style={{height:"40%"}}>{props.username}
