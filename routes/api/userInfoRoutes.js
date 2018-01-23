@@ -145,14 +145,14 @@ var randToken = require("rand-token");
 
 
   router.get("/checkLogin", function(req, res) {
-    var authToken = req.query.authToken;
+    var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
 
     db.User.findAll({
       where: {
         authToken: authToken
       }
     }).then(function(response) {
-      console.log(response);
+      res.send(response);
       });
     });
 

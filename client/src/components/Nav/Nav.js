@@ -15,11 +15,23 @@ class Nav extends React.Component {
     this.state = {
       showModal: false,
       username: "",
-      password: ""
+      password: "",
+      loggedIn: false
     };
     
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  componentDidMount() {
+    var userToken = document.cookie.slice(10, document.cookie.length);
+    axios.get("user/checkLogin", {authToken:userToken}).then(response => {
+      if(userToken === response.data[0].authToken){
+        this.setState({loggedIn: true});
+      }else {
+        this.setState({loggedIn: false});
+      }
+    });
   }
   
   handleOpenModal (e) {
@@ -34,10 +46,6 @@ class Nav extends React.Component {
     this.setState({ showModal: false });
     this.submitLog();
   }
-
-  // shouldCloseOnOverlayClick () {
-  //   this.setState({ showModal: false })
-  // }
 
   onChangeUsername = (e) => {
     e.preventDefault();
@@ -55,19 +63,29 @@ class Nav extends React.Component {
   }
 
   submitLog = (e) => {
-    // e.preventDefault();
     var state = this.state;
     axios.get("user/login", {
       params: state
-    }).then(function(response, err){
+    }).then(response => {
       if(response.data[0]){
         if(response.data[0].username === state.username){
+          this.setState({loggedIn: true});
+          console.log(this.state);
           window.location.href = "/profile";
         } 
       } else{
         alert("Login Error. Please try again.");
       }
     });
+  }
+
+  logout = (e) => {
+    e.preventDefault();
+    document.cookie = "authToken" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    console.log("logout function called");
+    this.setState({'loggedIn': false});
+    console.log(this.state);
+    window.location.href = "/";
   }
 
 
@@ -77,6 +95,7 @@ class Nav extends React.Component {
         <Navbar brand="the cc" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2"> 
           <NavItem>
             <Button
+              color="#841584"
               onClick={this.handleOpenModal}
             >LOGIN</Button>
 
@@ -85,6 +104,14 @@ class Nav extends React.Component {
           <NavItem>
             <Link to="/browse">BROWSE</Link>
           </NavItem>
+
+          <NavItem>
+            <Button
+              className={this.state.loggedIn ? '' : 'invisible'}
+              onClick={this.logout}
+              >Logout</Button>
+          </NavItem>
+
           <ul id="nav-mobile" className="side-nav">
             <li><a href="#">Navbar Link</a></li>
           </ul>
