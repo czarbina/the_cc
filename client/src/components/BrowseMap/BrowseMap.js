@@ -3,7 +3,9 @@ import Browse from "../Browse/Browse";
 import "./BrowseMap.css";
 
 
-const BrowseMap = props => (
+const BrowseMap = props => {
+  console.log(props.Artists);
+  return(
   <div className="container">
     <ul className="cardGroup">
       {props.Artists.map(item=>(
@@ -20,7 +22,8 @@ const BrowseMap = props => (
         ))}
       </ul>
     </div>
-);
+  );
+};
 
 
 

@@ -6,6 +6,5 @@ export default {
   },
   getArtists: function() {
   	return axios.get("/bio/all");
-  	console.log("getting artists")
   }
 };
