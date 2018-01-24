@@ -1,5 +1,6 @@
 var db = require("../../models");
 var router = require("express").Router();
+var Op = require("sequelize").Op;
 
 
   router.get("/all", function(req, res) {
@@ -9,6 +10,19 @@ var router = require("express").Router();
     }).catch(function(err) {
       console.log(err);
     });
+  });
+
+  router.get("/artists", function(req, res) {
+    db.Userbio.findAll({
+      where: {
+        image: {
+          [Op.ne]: null
+          } 
+        }
+      }).then(function(results){
+        console.log("banana",results);
+        res.json(results);
+      });
   });
 
   router.get("artistname/:artistName", function(req, res) {

@@ -5,6 +5,6 @@ export default {
     return axios.post("/bio/createProfile", userData);
   },
   getArtists: function() {
-  	return axios.get("/bio/all");
+  	return axios.get("/bio/artists");
   }
 };
