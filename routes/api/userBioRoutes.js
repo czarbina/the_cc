@@ -4,7 +4,10 @@ var router = require("express").Router();
 
   router.get("/all", function(req, res) {
     db.Userbio.findAll({}).then(function(results) {
-      res.json(results);
+      res.json(results)
+      ;
+    }).catch(function(err) {
+      console.log(err);
     });
   });
 

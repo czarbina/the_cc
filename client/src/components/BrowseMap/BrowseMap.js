@@ -4,7 +4,6 @@ import "./BrowseMap.css";
 
 
 const BrowseMap = props => {
-  console.log(props.Artists);
   return(
   <div className="container">
     <ul className="cardGroup">

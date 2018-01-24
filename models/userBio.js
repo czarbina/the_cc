@@ -17,6 +17,13 @@ var Userbio = sequelize.define("Userbio", {
       }
     },
 
+  image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      isUrl: true
+  // validate they are of legal age to use our service
+  },  
+
   bio: {
       type: DataTypes.TEXT,
       allowNull: true,
