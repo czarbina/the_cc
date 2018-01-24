@@ -5,10 +5,6 @@ import {Link} from "react-router-dom";
 
 
 const BrowseMap = props => {
-  // var goToProfile = (x) => {
-  //   console.log(x);
-  //   window.location.href="/profile"
-  // };
   return(
   <div className="container">
     <ul className="cardGroup">

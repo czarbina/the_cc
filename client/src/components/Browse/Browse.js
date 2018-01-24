@@ -28,22 +28,8 @@ class Browse extends Component {
     })
       .then(res => this.setState({ artists: res.data }))
       .catch(err => console.log(err));
-  }
+  };
   
-  // goToProfile = () => {
-  //   var state =this.state;
-  //   axios.get("/browse", {
-  //     params: state
-  //   }).then(response => {
-  //     if (response.data[0]){
-  //       if (response.data[0].id === state.id){
-  //         window.location.href = "/profile/";
-  //       }
-  //     } else{
-  //       alert("Error");
-  //     }
-  //   });
-  // }
 
 
 
