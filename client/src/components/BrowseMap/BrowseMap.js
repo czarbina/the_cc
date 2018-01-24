@@ -1,5 +1,5 @@
 import React from "react";
-import Browse from "../Browse/Browse";
+import Browse from "../../pages/Browse/Browse";
 import "./BrowseMap.css";
 
 

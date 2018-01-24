@@ -93,6 +93,10 @@ var router = require("express").Router();
       bio: req.body.bio,
       tags: req.body.tags,
       links: req.body.links,
+      links2: req.body.links,
+      links3: req.body.links,
+      soundcloud: req.body.soundcloud,
+      facebook: req.body.facebook,
       coverphoto: req.body.coverphoto
     },
     {
@@ -106,7 +110,7 @@ var router = require("express").Router();
   }
   });
 
-  router.get("/artistProfile", function(req, res) {
+  router.get("/profile", function(req, res) {
 var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
       db.Userbio.findOne({
         where: {
