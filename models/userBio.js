@@ -3,18 +3,20 @@ module.exports = function(sequelize, DataTypes) {
 var Userbio = sequelize.define("Userbio", {
   artistName: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
+      // ,
+      // validate: {
+      //   len: [1]
+      // }
     },
 
   username: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
+      // ,
+      // validate: {
+      //   len: [1]
+      // }
     },
 
   image: {
@@ -34,51 +36,57 @@ var Userbio = sequelize.define("Userbio", {
 
   tags: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
+      // ,
+      // validate: {
+      //   len: [1]
+      // }
     },
 
   links: {
     type: DataTypes.STRING,
       allowNull: true,
-      isUrl: true,
-      validate: {
-        len: [1]
-      }
+      isUrl: true
+      // ,
+      // validate: {
+      //   len: [1]
+      // }
     },
     links2: {
       type: DataTypes.STRING,
         allowNull: true,
-        isUrl: true,
-        validate: {
-          len: [1]
-        }
+        isUrl: true
+        // ,
+        // validate: {
+        //   len: [1]
+        // }
       },
       links3: {
         type: DataTypes.STRING,
           allowNull: true,
-          isUrl: true,
-          validate: {
-            len: [1]
-          }
+          isUrl: true
+          // ,
+          // validate: {
+          //   len: [1]
+          // }
         },
         facebook: {
           type: DataTypes.STRING,
             allowNull: true,
-            isUrl: true,
-            validate: {
-              len: [1]
-            }
+            isUrl: true
+            // ,
+            // validate: {
+            //   len: [1]
+            // }
           },
           soundcloud: {
             type: DataTypes.STRING,
               allowNull: true,
-              isUrl: true,
-              validate: {
-                len: [1]
-              }
+              isUrl: true
+              // ,
+              // validate: {
+              //   len: [1]
+              // }
             },
   coverphoto: {
       type: DataTypes.STRING,
@@ -89,10 +97,11 @@ var Userbio = sequelize.define("Userbio", {
 
   authToken: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
+      // ,
+      // validate: {
+      //   len: [1]
+      // }
     },
 }, {
   timestamps: false
