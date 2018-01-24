@@ -5,17 +5,8 @@ const ProfileCard = props => {
 	console.log(props);
 return (
 <div className="container" style={{width:"80%"}}>
-
-
-			<Card className='extra-large'
-				header={<CardTitle image={props.coverphoto}
-				style={{height:"40%"}}>{props.username}
-
 	<Row>
 		<Col s={4}>
-  
-			<Card className='extra-large'
-
 			
 			<Card className='extra-large z-depth-5'
 				style= {{
@@ -25,12 +16,15 @@ return (
     				width: "300px"
     				}}
 
-
 				header={<CardTitle image={props.image}
 				>{props.username}
-
 				</CardTitle>}
 				>
+				<p>Name: {props.name}</p>
+				<p>About me: {props.bio}</p>
+			</Card>  
+		</Col>
+	</Row>
 				<Row>
 				<Col s={8}>
 				<p>artistName: {props.artistName}</p>
@@ -45,7 +39,6 @@ return (
 						<a href={props.facebook}><img className={this.facebook != "NULL" ? 'visible' : 'invisible'} src="http://www.iconarchive.com/download/i80444/uiconstock/socialmedia/Facebook.ico" /></a>
 				</Col>
 				</Row>
-			</Card>
 
 </div>)};
 

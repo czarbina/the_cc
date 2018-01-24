@@ -7,7 +7,6 @@ import Icon from "../icons/icons";
 import "./Profile.css";
 import { Button, Row, Col, Carousel } from 'react-materialize';
 import axios from "axios";
-import { Row, Card, Col, CardTitle} from 'react-materialize';
 
 
 class Profile extends React.Component {
