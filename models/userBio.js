@@ -21,14 +21,14 @@ var Userbio = sequelize.define("Userbio", {
       type: DataTypes.STRING,
       allowNull: true,
       isUrl: true
-  // validate they are of legal age to use our service
+
   },  
 
   bio: {
       type: DataTypes.TEXT,
       allowNull: true,
       validate: {
-        len: [1]
+        len: [1,950]
       }
     },
 
@@ -84,7 +84,7 @@ var Userbio = sequelize.define("Userbio", {
       type: DataTypes.STRING,
       allowNull: true,
       isUrl: true
-  // validate they are of legal age to use our service
+
   },
 
   authToken: {
@@ -100,9 +100,4 @@ var Userbio = sequelize.define("Userbio", {
 return Userbio;
 };
 
-//artistName
-//snippet/description of self
-//tags
-//links
-//coverphoto
-//
+
