@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button, Card, Row, Col, Icon } from 'react-materialize';
 import BrowseMap from "../../components/BrowseMap/BrowseMap";
 import API from "../../Utils/API";
+import axios from "axios";
 
 class Browse extends Component {
   state= {
@@ -13,7 +14,7 @@ class Browse extends Component {
 
   componentDidMount() {
     this.loadArtists();
-  }
+  };
 
   loadArtists = () => {
     API.getArtists({
@@ -26,11 +27,18 @@ class Browse extends Component {
       .then(res => this.setState({ artists: res.data }))
       .catch(err => console.log(err));
   };
+  
+
+
+
 
 render() {
   console.log(this.state);
   return (
-    <BrowseMap Artists={this.state.artists} />
+    <BrowseMap 
+    Artists={this.state.artists}
+    goToProfile={this.goToProfile} />
+
     );
   }
 }

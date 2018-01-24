@@ -1,6 +1,7 @@
 import React from "react";
 import Browse from "../../pages/Browse/Browse";
 import "./BrowseMap.css";
+import {Link} from "react-router-dom";
 
 
 const BrowseMap = props => {
@@ -8,7 +9,9 @@ const BrowseMap = props => {
   <div className="container">
     <ul className="cardGroup">
       {props.Artists.map(item=>(
-        <li className="card" key={item.id}>
+        <Link to={"/profile/" + item.id} >
+          <li className="card" 
+              key={item.id}>
          <img className="image" alt={item.artistName} src={item.image}/>
           <div className="bio">
           <li> {item.bio} </li>
@@ -17,7 +20,8 @@ const BrowseMap = props => {
           <li> {item.artistName} </li>
           <li> {item.links} </li>
           </div>
-        </li>
+          </li>
+        </Link>
         ))}
       </ul>
     </div>

@@ -12,6 +12,7 @@ const App = () =>
 		<div>
 			<Nav />
 			<Route exact path="/" component ={Home}/>
+			<Route exact path="/profile/:id" component ={Profile}/>
 			<Route exact path="/browse" component={Browse}/>
 			<Route exact path="/profile" component={Profile}/>
 			<Route exact path="/createProfile" component={createProfile}/>
