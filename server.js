@@ -29,3 +29,4 @@ db.sequelize.sync({}).then(function() {
     console.log(`🌎 ==> Server now on port ${PORT}!`);
     });
   });
+ 

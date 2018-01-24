@@ -117,6 +117,10 @@ var Op = require("sequelize").Op;
      where: {
       authToken: authToken
     }
+    }).then(function(results){
+      console.log("createProfile route response");
+      console.log(res);
+      res.json(results);
     });
 
   }else{

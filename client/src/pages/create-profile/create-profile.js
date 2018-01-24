@@ -18,14 +18,14 @@ class createProfile extends Component {
 		coverphoto: "",
     facebook:"",
     soundcloud:""
-	};
+	}
 
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
-  };
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -42,7 +42,8 @@ class createProfile extends Component {
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
-  };
+        window.location.href="/profile";
+  }
 
   render() { 
     return (
