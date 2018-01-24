@@ -22,7 +22,7 @@ var Userbio = sequelize.define("Userbio", {
       allowNull: true,
       isUrl: true
 
-  },  
+  },
 
   bio: {
       type: DataTypes.TEXT,
@@ -99,5 +99,8 @@ var Userbio = sequelize.define("Userbio", {
 });
 return Userbio;
 };
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> profileredo
