@@ -99,8 +99,4 @@ var Userbio = sequelize.define("Userbio", {
 });
 return Userbio;
 };
-<<<<<<< HEAD
 
-
-=======
->>>>>>> profileredo

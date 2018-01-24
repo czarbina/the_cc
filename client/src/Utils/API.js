@@ -8,3 +8,4 @@ export default {
   	return axios.get("/bio/all");
   }
 };
+ 

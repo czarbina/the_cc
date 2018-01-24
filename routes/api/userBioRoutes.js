@@ -103,6 +103,10 @@ var router = require("express").Router();
      where: {
       authToken: authToken
     }
+    }).then(function(results){
+      console.log("createProfile route response");
+      console.log(res);
+      res.json(results);
     });
 
   }else{
