@@ -15,7 +15,7 @@ const BrowseMap = props => {
           </div>
           <div className="content">
           <li> {item.artistName} </li>
-          <li> {item.link} </li>
+          <li> {item.links} </li>
           </div>
         </li>
         ))}

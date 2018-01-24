@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 
 var User = sequelize.define("User", {
   name: DataTypes.STRING,
-  // person's name (a string)
+
   emailAddress: {
       type: DataTypes.STRING,
       isEmail: true,
@@ -21,7 +21,7 @@ var User = sequelize.define("User", {
       }
 
   },
-  // valid email address for confirmation
+
   password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -60,10 +60,4 @@ var User = sequelize.define("User", {
   return User;
 };
 
-// Name (first, last?)
-// (id)
-// email address
-//password
-//zipcode
-//birthday
-//profile photo
+
