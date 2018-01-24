@@ -36,7 +36,8 @@
 	font-size: 15px;
 	color: black;
 	position: relative;
-	left: 10px;
+	right: 15px;
+	padding: 3px;
 }
 
 .image{
