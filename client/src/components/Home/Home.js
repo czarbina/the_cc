@@ -50,8 +50,14 @@ class Home extends React.Component {
     const state = this.state
     state[e.target.name] = e.target.value;
     this.setState(state);
-
-
+  }
+ 
+  autoLogin = (userInfo) => {
+    axios.get("user/login", { 
+      params: userInfo
+    }).then(function(res){
+      window.location.href = "/profile"; 
+    });
   }
 
   onSubmit = (e) => {
@@ -61,9 +67,15 @@ class Home extends React.Component {
     if (this.state.password===this.state.password_conf) {
     axios.post('/user/newUser', this.state)
           .then((result) => {
-            console.log("Heeey2");
             console.log(result);
             this.setState({ showModal: false });
+            
+            const newUserAutoLogin = {
+              username: result.data.username,
+              password: result.data.password
+            };
+
+            this.autoLogin(newUserAutoLogin);
 
         });
 

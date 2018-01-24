@@ -44,7 +44,7 @@ class createProfile extends Component {
         .catch(err => console.log(err));
   };
 
-  render() {
+  render() { 
     return (
       <div className="container">
           <Jumbotron className="jumbo">
