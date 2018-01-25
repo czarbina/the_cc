@@ -3,18 +3,12 @@ module.exports = function(sequelize, DataTypes) {
 var Userbio = sequelize.define("Userbio", {
   artistName: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
 
   username: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
     },
 
   image: {
@@ -26,59 +20,38 @@ var Userbio = sequelize.define("Userbio", {
 
   bio: {
       type: DataTypes.TEXT,
-      allowNull: true,
-      validate: {
-        len: [1,950]
-      }
+      allowNull: true
     },
 
   tags: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
 
   links: {
     type: DataTypes.STRING,
       allowNull: true,
-      isUrl: true,
-      validate: {
-        len: [1]
-      }
+      isUrl: true
     },
     links2: {
       type: DataTypes.STRING,
         allowNull: true,
-        isUrl: true,
-        validate: {
-          len: [1]
-        }
+        isUrl: true
       },
       links3: {
         type: DataTypes.STRING,
           allowNull: true,
-          isUrl: true,
-          validate: {
-            len: [1]
-          }
+          isUrl: true
         },
         facebook: {
           type: DataTypes.STRING,
             allowNull: true,
-            isUrl: true,
-            validate: {
-              len: [1]
-            }
+            isUrl: true
           },
           soundcloud: {
             type: DataTypes.STRING,
               allowNull: true,
-              isUrl: true,
-              validate: {
-                len: [1]
-              }
+              isUrl: true
             },
   coverphoto: {
       type: DataTypes.STRING,
@@ -89,18 +62,10 @@ var Userbio = sequelize.define("Userbio", {
 
   authToken: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
 }, {
   timestamps: false
 });
 return Userbio;
 };
-<<<<<<< HEAD
-
-
-=======
->>>>>>> profileredo
