@@ -1,4 +1,5 @@
 import React from "react";
+import "./background.css";
 
 const Background = props => {
   const css = {
@@ -10,8 +11,8 @@ const Background = props => {
 
       <header style={css} >
         <h1>{props.artistName}</h1>
-        <p>{props.tags}</p>
-    </header>
+        <p className="white-text">{props.tags}</p>
+      </header>
 
 
   );

@@ -6,8 +6,9 @@ import Services from "../../components/services/services";
 import Bio from "../../components/bio/bio";
 import Background from "../../components/background/background";
 import Soundcloud from "../../components/soundcloud/soundcloud";
+import "../Profile/Profile.css";
 import Icon from "../../components/icons/icons";
-import "./Profile.css";
+
 
 class Profile extends React.Component {
 
@@ -81,6 +82,7 @@ class Profile extends React.Component {
 			    	});
 		    	}
 		    });
+
 	    });
 	  }
 
@@ -154,4 +156,6 @@ class Profile extends React.Component {
 		)};
 };
 
-export default Profile;
+
+export default ArtistProfile;
+

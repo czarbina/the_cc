@@ -98,7 +98,7 @@ var Op = require("sequelize").Op;
       var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
       var updateValues = {};
 
-
+  if(req.body.image.length > 0){updateValues.image = req.body.image};
       if(req.body.artistName.length > 0){updateValues.artistName = req.body.artistName};
       if(req.body.bio.length > 0){updateValues.bio = req.body.bio};
       if(req.body.tags.length > 0){updateValues.tags = req.body.tags};
