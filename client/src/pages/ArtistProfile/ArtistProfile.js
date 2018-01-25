@@ -1,6 +1,9 @@
 import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import Bio from "../../components/bio/bio";
+import Services from "../../components/services/services";
+import Icon from "../../components/icons/icons";
+import Background from "../../components/background/background";
 import Soundcloud from "../../components/soundcloud/soundcloud";
 import "../Profile/Profile.css";
 import axios from "axios";
@@ -17,31 +20,42 @@ class ArtistProfile extends React.Component {
 			links: "",
 			links2: "",
 			links3: "",
-			coverphoto: "",
+			coverphoto: "http://www.kinyu-z.net/data/wallpapers/225/1492625.jpg",
 			soundcloud:"",
-			facebook:""
+			facebook:"",
+			image: ""
 	}
 
 	getProfile = () => {
 		var id = this.props.match.params.id;
 		var query = `/bio/artistprofile/${id}`;
-		console.log(`Query: ${query}`);
 
 	    axios.get(query).then((data) => {
+				console.log(data.data)
 				this.setState({
-					id: data.data[0].id,
-					artistName: data.data[0].artistName,
-					username: data.data[0].username,
-					bio: data.data[0].bio,
-					tags: data.data[0].tags,
-					links: data.data[0].links,
-					links2: data.data[0].links2,
-					links3: data.data[0].links3,
-					coverphoto: data.data[0].coverphoto,
-					soundcloud: data.data[0].soundcloud,
-					facebook: data.data[0].facebook
+					id: data.data.id,
+					artistName: data.data.artistName,
+					username: data.data.username,
+					bio: data.data.bio,
+					tags: data.data.tags,
+					links: data.data.links,
+					links2: data.data.links2,
+					links3: data.data.links3,
+					soundcloud: data.data.soundcloud,
+					facebook: data.data.facebook
 				});
-				console.log("State!!!!!!!!!");
+				if (data.data.image !== null && data.data.image !== "") {
+					this.setState({
+						image: data.data.image
+					});
+				};
+
+				if (data.data.coverphoto !== null && data.data.coverphoto !== "") {
+					this.setState({
+						coverphoto: data.data.coverphoto
+					});
+				};
+
 				console.log(this.state);
 	    });
 	}
@@ -50,37 +64,59 @@ class ArtistProfile extends React.Component {
 		console.log("ArtistProfile.js");
 	    this.getProfile();
 	};
-
-
 	render () {
-    return (
-			<Row>
-				<Col s={4}>
-			    	<ProfileCard
-			    	image={this.state.coverphoto}
-					username={this.state.username}
-					artistName={this.state.artistName}
-					tags={this.state.tags}
-					facebook={this.state.facebook}
-					soundcloud={this.state.soundcloud}
-			    	/>
-				</Col>
-			<Soundcloud
-				links={this.state.links}
-				links2={this.state.links2}
-				links3={this.state.links3}
-			/>
+		return (
+			<div className="bg">
+				<div className="container bg2">
 
+					<Background
+						coverphoto={this.state.coverphoto}
+						artistName={this.state.artistName}
+						tags={this.state.tags}
+					/>
 
-		<Col s={8}>
-<Bio
-bio={this.state.bio} />
-</Col>
-</Row>
+					<Row className="background">
+						<Col s={9}></Col>
+						<Col id="social" s={3}>
+							<Icon
+								soundcloud={this.state.soundcloud}
+								facebook={this.state.facebook} />
+						</Col>
+					</Row>
 
-		)};
+					<ProfileCard
+						image={this.state.image}
+						username={this.state.username}
+						zip={this.state.zip}
+						name={this.state.name}
+					/>
 
+					<Row>
+						<Col s={3}></Col>
+						<Col className="soundcloud" s={9}>
+							<Bio
+								bio={this.state.bio} />
+							</Col>
+					</Row>
 
+					<Row>
+						<Col s={4}>
+							<Services
+								services={this.state.services}
+							/>
+						</Col>
+						<Col className="soundcloud white z-index-5" s={7}>
+							<Soundcloud
+								links={this.state.links}
+								links2={this.state.links2}
+								links3={this.state.links3}
+						/>
+						</Col>
+					</Row>
+
+			</div>
+		</div>
+	)};
 };
 
 export default ArtistProfile;

@@ -142,7 +142,7 @@ var Op = require("sequelize").Op;
 
   router.get("/artistprofile/:id", function(req, res) {
     var id = req.params.id;
-      db.Userbio.findAll({
+      db.Userbio.findOne({
         where: {
         id: id
         }

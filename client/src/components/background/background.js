@@ -10,7 +10,7 @@ const Background = props => {
   return (
 
       <header style={css} >
-        <h1>{props.artistName}</h1>
+        <h2>{props.artistName}</h2>
         <p className="white-text">{props.tags}</p>
       </header>
 

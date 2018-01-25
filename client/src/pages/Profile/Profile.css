@@ -29,14 +29,14 @@
 p {
   font-family: 'Roboto', sans-serif;
 }
-.bg {
+/* .bg {
   height: 1000px;
   background-image: url("http://circulab.eu/wp-content/uploads/2015/08/background-ciel.jpg.pagespeed.ce.AkN_flPUd1.jpg");
 }
 .bg2 {
     height: 1000px;
   background-image: url("https://image.freepik.com/free-photo/white-textured-wall-background-texture_1368-6402.jpg");
-}
+} */
 .card-content {
   background: white;
 }
