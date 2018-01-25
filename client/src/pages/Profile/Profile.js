@@ -19,7 +19,7 @@ class Profile extends React.Component {
 			links: "",
 			links2: "",
 			links3: "",
-			image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+			image: "https://blog.profitwell.com/hs-fs/hub/120299/file-2584805845-jpg/Female-avatar.jpg?t=1516671535643",
 			coverphoto: "http://www.kinyu-z.net/data/wallpapers/225/1492634.jpg",
 			soundcloud:"",
 			facebook:"",
