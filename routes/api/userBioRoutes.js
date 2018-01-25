@@ -129,10 +129,21 @@ var Op = require("sequelize").Op;
   });
 
   router.get("/profile", function(req, res) {
-var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
+    var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
       db.Userbio.findOne({
         where: {
         authToken: authToken
+        }
+      }).then(function(results) {
+        res.json(results);
+      });
+  });
+
+  router.get("/artistprofile/:id", function(req, res) {
+    var id = req.params.id;
+      db.Userbio.findAll({
+        where: {
+        id: id
         }
       }).then(function(results) {
         res.json(results);
