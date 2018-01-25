@@ -7,7 +7,7 @@ const Services = props => {
   return (
 
   	<div className="container">
-  				<h5>Hire Me</h5>
+  				<h5 className={props.services !== null && props.services !== "" ? 'visible container' : 'invisible'}>Hire Me</h5>
   				<p>{props.services}</p>
   	</div>)};
 

@@ -2,7 +2,7 @@ import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import Bio from "../../components/bio/bio";
 import Soundcloud from "../../components/soundcloud/soundcloud";
-import "./Profile.css";
+import "../Profile/Profile.css";
 import axios from "axios";
 import { Row, Card, Col, CardTitle} from 'react-materialize';
 
@@ -42,7 +42,7 @@ class ArtistProfile extends React.Component {
 					facebook: data.data[0].facebook
 				});
 				console.log("State!!!!!!!!!");
-				console.log(this.state); 
+				console.log(this.state);
 	    });
 	}
 
@@ -84,4 +84,3 @@ bio={this.state.bio} />
 };
 
 export default ArtistProfile;
- 
