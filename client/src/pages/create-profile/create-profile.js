@@ -57,7 +57,7 @@ class createProfile extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container small-container">
           <Jumbotron className="jumbo">
             <h1>Create a Profile</h1>
           </Jumbotron>
