@@ -49,6 +49,7 @@ class Profile extends React.Component {
 					links: data.data[0].links,
 					links2: data.data[0].links2,
 					links3: data.data[0].links3,
+					image: data.data[0].image,
 					links4: data.data[0].links4,
 					links5: data.data[0].links5,
 					links6: data.data[0].links6,
@@ -122,8 +123,12 @@ class Profile extends React.Component {
 						</Row>
 
 			    	<ProfileCard
-				    	image={this.state.image}
-							username={this.state.username}
+			    	image={this.state.image}
+					username={this.state.username}
+					artistName={this.state.artistName}
+					tags={this.state.tags}
+					facebook={this.state.facebook}
+					soundcloud={this.state.soundcloud}
 							zip={this.state.zipcode}
 							name={this.state.name}
 			    	/>
