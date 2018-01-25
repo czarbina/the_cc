@@ -37,7 +37,7 @@ class ArtistProfile extends React.Component {
 					links: data.data[0].links,
 					links2: data.data[0].links2,
 					links3: data.data[0].links3,
-					coverphoto: data.data[0].coverphoto,
+					image: data.data[0].image,
 					soundcloud: data.data[0].soundcloud,
 					facebook: data.data[0].facebook
 				});
@@ -57,7 +57,7 @@ class ArtistProfile extends React.Component {
 			<Row>
 				<Col s={4}>
 			    	<ProfileCard
-			    	image={this.state.coverphoto}
+			    	image={this.state.image}
 					username={this.state.username}
 					artistName={this.state.artistName}
 					tags={this.state.tags}
