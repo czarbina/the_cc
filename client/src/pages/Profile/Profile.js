@@ -1,14 +1,14 @@
 import React from "react";
+import axios from "axios";
+import { Row, Card, Col, CardTitle, Carousel, MediaBox, Button} from 'react-materialize';
 import ProfileCard from "../../components/ProfileCard";
+import Services from "../../components/services/services";
 import Bio from "../../components/bio/bio";
 import Background from "../../components/background/background";
 import Soundcloud from "../../components/soundcloud/soundcloud";
 import Icon from "../../components/icons/icons";
-
 import "./Profile.css";
-import axios from "axios";
-import { Row, Card, Col, CardTitle, Carousel, MediaBox, Button} from 'react-materialize';
-import $ from "jquery";
+
 class Profile extends React.Component {
 
 		state = {
@@ -27,11 +27,13 @@ class Profile extends React.Component {
 			soundcloud:"",
 			facebook:"",
 			zip: "",
-			username: ""
+			username: "",
+			services: ""
 		};
 
 		getProfile = () => {
 	    axios.get("/bio/profile").then((data) => {
+				console.log(data.data);
 				this.setState({
 					id: data.data.id,
 					artistName: data.data.artistName,
@@ -45,19 +47,21 @@ class Profile extends React.Component {
 					links5: data.data.links5,
 					links6: data.data.links6,
 					soundcloud: data.data.soundcloud,
-					facebook: data.data.facebook
+					facebook: data.data.facebook,
+					services: data.data.services
 				});
-					if (data.data.image != null || "") {
-						this.setState({
-							image: data.data.image
-				});
-			};
-			if (data.data.coverphoto != null || "") {
-				this.setState({
-					coverphoto: data.data.coverphoto
-		});
-		console.log(this.state);
-	};
+
+				if (data.data.image != null || "") {
+					this.setState({
+						image: data.data.image
+					});
+				};
+
+				if (data.data.coverphoto != null || "") {
+					this.setState({
+						coverphoto: data.data.coverphoto
+					});
+				};
 	    });
 	  };
 
@@ -70,69 +74,62 @@ class Profile extends React.Component {
 				});
 			});
 		};
+
 	  componentDidMount = () => {
 	    this.getProfile();
 			this.getProfileCard();
-
 	  };
 
-	render () {
-    return (
-			<div className="bg">
-				<div className="container bg2">
-				<Background
-					coverphoto={this.state.coverphoto}
-					artistName={this.state.artistName}
-					tags={this.state.tags}
-				/>
-				<Row className="background">
-					<Col s={9}></Col>
-					<Col id="social" s={3}>
-				<Icon
-					soundcloud={this.state.soundcloud}
-					facebook={this.state.facebook} />
-					</Col>
-				</Row>
+		render () {
+    	return (
+				<div className="bg">
+					<div className="container bg2">
 
+						<Background
+							coverphoto={this.state.coverphoto}
+							artistName={this.state.artistName}
+							tags={this.state.tags}
+						/>
 
+						<Row className="background">
+							<Col s={9}></Col>
+							<Col id="social" s={3}>
+								<Icon
+									soundcloud={this.state.soundcloud}
+									facebook={this.state.facebook} />
+							</Col>
+						</Row>
 
-				<Row>
-					<Col className="left" s={4}>
 			    	<ProfileCard
 				    	image={this.state.image}
 							username={this.state.username}
 							zip={this.state.zip}
 							name={this.state.name}
 			    	/>
-					</Col>
-				</Row>
 
-				<Row>
-				<Col s={3}></Col>
-				<Col className="soundcloud" s={9}>
-					<Bio
-						bio={this.state.bio} />
-						</Col>
-				</Row>
+						<Row>
+							<Col s={3}></Col>
+							<Col className="soundcloud" s={9}>
+								<Bio
+									bio={this.state.bio} />
+								</Col>
+						</Row>
 
-				<Row>
-					<Col s={3}></Col>
-					<Col className="soundcloud" s={9}>
-						<Soundcloud
-							links={this.state.links}
-							links2={this.state.links2}
-							links3={this.state.links3}
-					/>
-					</Col>
-				</Row>
-				<Row className="width">
-				<Col s={2}></Col>
-<Col className="width" s={6}>
+						<Row>
+							<Col s={3}>
+								<Services
+									services={this.state.services}
+								/>
+							</Col>
+							<Col className="soundcloud" s={9}>
+								<Soundcloud
+									links={this.state.links}
+									links2={this.state.links2}
+									links3={this.state.links3}
+							/>
+							</Col>
+						</Row>
 
-
-</Col>
-	<Col s={2}></Col>
-				</Row>
 				</div>
 			</div>
 		)};

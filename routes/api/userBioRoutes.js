@@ -17,7 +17,7 @@ var Op = require("sequelize").Op;
       where: {
         image: {
           [Op.ne]: null
-          } 
+          }
         }
       }).then(function(results){
         console.log("banana",results);
@@ -102,6 +102,7 @@ var Op = require("sequelize").Op;
       var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
       var updateValues = {};
 
+
       if(req.body.artistName.length > 0){updateValues.artistName = req.body.artistName};
       if(req.body.bio.length > 0){updateValues.bio = req.body.bio};
       if(req.body.tags.length > 0){updateValues.tags = req.body.tags};
@@ -112,10 +113,7 @@ var Op = require("sequelize").Op;
       if(req.body.facebook.length > 0){updateValues.facebook = req.body.facebook};
       if(req.body.coverphoto.length > 0){updateValues.coverphoto = req.body.coverphoto};
 
-      console.log("UPDATE VALUES!!!!!!!!!!!");
-      console.log(updateValues);
-
-    db.Userbio.update(updateValues ,
+    db.Userbio.update(updateValues,
     {
      where: {
       authToken: authToken
@@ -154,4 +152,4 @@ var Op = require("sequelize").Op;
   });
 
 
-  module.exports = router; 
+  module.exports = router;
