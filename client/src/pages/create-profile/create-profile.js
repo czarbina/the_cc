@@ -45,6 +45,7 @@ class createProfile extends Component {
         links5: this.state.links5,
         links6: this.state.links6,
         coverphoto: this.state.coverphoto,
+          image: this.state.image,
         facebook: this.state.facebook,
         soundcloud: this.state.soundcloud,
         services: this.state.services,

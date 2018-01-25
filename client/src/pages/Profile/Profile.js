@@ -22,7 +22,7 @@ class Profile extends React.Component {
 			links4: "",
 			links5: "",
 			links6: "",
-			image: "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
+			image: "http://style.anu.edu.au/_anu/4/images/placeholders/person_8x10.png",
 			coverphoto: "http://www.kinyu-z.net/data/wallpapers/225/1492625.jpg",
 			soundcloud:"",
 			facebook:"",
@@ -51,7 +51,7 @@ class Profile extends React.Component {
 					services: data.data.services
 				});
 
-				if (data.data.image != null || "") {
+				if (data.data.image !== null && data.data.image !== "") {
 					this.setState({
 						image: data.data.image
 					});
@@ -116,12 +116,12 @@ class Profile extends React.Component {
 						</Row>
 
 						<Row>
-							<Col s={3}>
+							<Col s={4}>
 								<Services
 									services={this.state.services}
 								/>
 							</Col>
-							<Col className="soundcloud" s={9}>
+							<Col className="soundcloud white z-index-5" s={7}>
 								<Soundcloud
 									links={this.state.links}
 									links2={this.state.links2}
