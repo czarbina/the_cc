@@ -7,3 +7,33 @@
 .row1 {
   display: inline;
 }
+.card-content {
+	background: white;
+  height: 300px;
+}
+.card-action {
+	background: white;
+
+
+}
+
+.card-image {
+color: red;
+
+}
+.username {
+    background: white;
+  color: #ffab40;
+padding: 10px;
+border-radius: 30px;
+font-size: 24px;
+
+}
+.cardmain {
+  position: fixed;
+  top:  80;
+  left: 80;
+  width: 300px;
+  height: 700px;
+
+}

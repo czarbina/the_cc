@@ -13,14 +13,10 @@ var Op = require("sequelize").Op;
   });
 
   router.get("/artists", function(req, res) {
-    db.Userbio.findAll({
-      where: {
-        image: {
-          [Op.ne]: null
-          }
-        }
-      }).then(function(results){
+    console.log("HITTING ROUTE!!! /bio/artists");
+    db.Userbio.findAll().then(function(results){
         console.log("banana",results);
+        console.log(results);
         res.json(results);
       });
   });
@@ -63,20 +59,19 @@ var Op = require("sequelize").Op;
 
   router.post("/newBio", function(req, res) {
     var username = req.body.username;
-    console.log(`USERNAME: ${username}`);
     db.Userbio.create({
       username: username
     });
   });
 
   router.post("/deleteBio", function(req, res) {
-    console.log(req.body);
     db.Userbio.destroy({
       where: {
         id: req.body.id
       }
     });
   });
+
   // router.post("/createProfile", function(req, res) {
   //   console.log(req.body);
   //   db.Userbio.create({
@@ -97,12 +92,13 @@ var Op = require("sequelize").Op;
   //     });
   //   }
   // });
+
   router.post("/createProfile", function(req, res) {
     if(req.headers.cookie){
       var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
       var updateValues = {};
 
-
+  if(req.body.image.length > 0){updateValues.image = req.body.image};
       if(req.body.artistName.length > 0){updateValues.artistName = req.body.artistName};
       if(req.body.bio.length > 0){updateValues.bio = req.body.bio};
       if(req.body.tags.length > 0){updateValues.tags = req.body.tags};
@@ -119,8 +115,6 @@ var Op = require("sequelize").Op;
       authToken: authToken
     }
     }).then(function(results){
-      console.log("createProfile route response");
-      console.log(res);
       res.json(results);
     });
 
@@ -152,4 +146,4 @@ var Op = require("sequelize").Op;
   });
 
 
-  module.exports = router;
+  module.exports = router; 
