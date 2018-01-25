@@ -10,13 +10,15 @@ var randToken = require("rand-token");
   });
 
 
-  router.get("username/:username", function(req, res) {
+  router.get("/username/:username", function(req, res) {
+    console.log("HIT ROUTE!!!");
     if (req.params.username) {
       db.User.findAll({
         where: {
           username: req.params.username
         }
       }).then(function(results) {
+        console.log(results);
         res.json(results);
       });
     }
@@ -83,7 +85,6 @@ var randToken = require("rand-token");
   });
 
   router.post("/newUser", function(req, res) {
-    console.log(req.body);
     db.User.create({
       name: req.body.name,
       username: req.body.username,
@@ -97,8 +98,6 @@ var randToken = require("rand-token");
   });
 
   router.post("/deleteUser", function(req, res) {
-    console.log("Book Data:");
-    console.log(req.body);
     db.User.destroy({
       where: {
         id: req.body.id
@@ -155,11 +154,9 @@ var randToken = require("rand-token");
 
 
   router.get("/checkLogin", function(req, res) {
-    console.log("hit check login route");
     if(req.headers.cookie !== undefined){
       var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
     }else {
-      console.log(req.headers.cookie);
     }
 
     db.User.findAll({

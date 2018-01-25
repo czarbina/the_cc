@@ -257,7 +257,7 @@ class Home extends React.Component {
             <h2 className="center brown-text">
             <img src={share} alt=""></img></h2>
             <h5 className="center">Exhibit and curate your work</h5>
-            <p className="light">The Creative Collective serves as a gallery, a stage, a or a booking agent to help showcase your creative body of work on a virtual platform. Create and manage your art, music, videos, or writings through easy to build profiles.</p>
+            <p className="light">The Creative Collective serves as a gallery, a stage, or a booking agent to help showcase your creative body of work on a virtual platform. Create and manage your art, music, videos, or writings through easy to build profiles.</p>
         </Col>
 
         <Col s={12} m={4}>
@@ -272,7 +272,7 @@ class Home extends React.Component {
             <h2 className="center brown-text">       
             <img src={success} alt=""></img></h2>
             <h5 className="center">Book gigs and sell your work.</h5>
-            <p className="light">You're a DJ? Use the calendar.. blablabla</p>
+            <p className="light">You're a DJ? Musician? Have a gallery opening soon? Use our calendar tool to let event bookers know when you're free or to alert others of any upcoming gigs you have in the pipeline.</p>
           </div>
         </Col>
       </Row>
@@ -304,7 +304,7 @@ class Home extends React.Component {
                 marginLeft: "auto",
                 left: "auto",
                 right: "auto"
-            }}>Perhaps a featured artist here.</h5>
+            }}></h5>
           </Row>
         </div>
       </div>
@@ -317,7 +317,7 @@ class Home extends React.Component {
         <Col s={12} className="center">
           <h3><i className="mdi-content-send brown-text"></i></h3>
           <h4>Contact Us</h4>
-          <p className="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p className="center-align light"></p>
 
         </Col>
       </Row>
@@ -347,7 +347,7 @@ class Home extends React.Component {
             <h5 className="header col s12 light" style={{marginLeft: "auto",
               left: "auto",
               right: "auto"
-            }}>Perhaps a catchy word or two here.</h5>
+            }}>If you would like to join our community, go ahead and make a profile.  We are growing every day and our community could be the perfect platform to get your work out there.  You never know who might see it.  Let's all grow together.  </h5>
           </div>
         </div>
       </div>
