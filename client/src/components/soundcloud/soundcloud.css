@@ -10,3 +10,9 @@
   height: auto;
   width: auto;
 }
+.visible {
+  display: inline;
+}
+.invisible {
+  display: none;
+}

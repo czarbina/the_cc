@@ -56,15 +56,15 @@ class ArtistProfile extends React.Component {
     return (
 			<Row>
 				<Col s={4}>
-    	<ProfileCard
-    	image={this.state.coverphoto}
-		username={this.state.username}
-		artistName={this.state.artistName}
-		tags={this.state.tags}
-		facebook={this.state.facebook}
-		soundcloud={this.state.soundcloud}
-    	/>
-			</Col>
+			    	<ProfileCard
+			    	image={this.state.coverphoto}
+					username={this.state.username}
+					artistName={this.state.artistName}
+					tags={this.state.tags}
+					facebook={this.state.facebook}
+					soundcloud={this.state.soundcloud}
+			    	/>
+				</Col>
 			<Soundcloud
 				links={this.state.links}
 				links2={this.state.links2}
@@ -72,7 +72,7 @@ class ArtistProfile extends React.Component {
 			/>
 
 
-<Col s={8}>
+		<Col s={8}>
 <Bio
 bio={this.state.bio} />
 </Col>

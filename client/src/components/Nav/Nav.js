@@ -143,7 +143,7 @@ class Nav extends React.Component {
            id="loginModal"
            className="Modal"
            overlayClassName="Overlay"
-           // onRequestClose={this.handleCloseModal}
+           onRequestClose={this.handleCloseModal}
           >
 
             <div className="modal-content">
