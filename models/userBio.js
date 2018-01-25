@@ -22,7 +22,10 @@ var Userbio = sequelize.define("Userbio", {
       type: DataTypes.TEXT,
       allowNull: true
     },
-
+    services: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
   tags: {
       type: DataTypes.STRING,
       allowNull: true

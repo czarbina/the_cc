@@ -14,8 +14,8 @@ return (
 			<Card className='extra-large z-depth-5'
 				style= {{
     				position: "fixed",
-    				top: "120",
-    				left: "40",
+    				top: "80",
+    				left: "80",
     				width: "300px",
 						height: "390px"
     		}}

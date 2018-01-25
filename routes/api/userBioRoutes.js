@@ -17,7 +17,7 @@ var Op = require("sequelize").Op;
       where: {
         image: {
           [Op.ne]: null
-          } 
+          }
         }
       }).then(function(results){
         console.log("banana",results);
@@ -107,11 +107,12 @@ var Op = require("sequelize").Op;
       bio: req.body.bio,
       tags: req.body.tags,
       links: req.body.links,
-      links2: req.body.links,
-      links3: req.body.links,
+      links2: req.body.links2,
+      links3: req.body.links3,
       soundcloud: req.body.soundcloud,
       facebook: req.body.facebook,
-      coverphoto: req.body.coverphoto
+      coverphoto: req.body.coverphoto,
+      image: req.body.image
     },
     {
      where: {
@@ -151,4 +152,4 @@ var Op = require("sequelize").Op;
   });
 
 
-  module.exports = router; 
+  module.exports = router;

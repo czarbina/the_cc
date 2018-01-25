@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import { Link } from "react-router-dom";
-import { input, TextArea, FormBtn } from "../../components/Form";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../Utils/API";
 import "./create-profile.css";
 import $ from 'jquery';
-import { Input, Row } from "react-materialize"
 
 class createProfile extends Component {
 
@@ -16,9 +15,14 @@ class createProfile extends Component {
 		links: "",
     links2: "",
     links3: "",
+    links4: "",
+    links5: "",
+    links6: "",
 		coverphoto: "",
     facebook:"",
-    soundcloud:""
+    soundcloud:"",
+    services: "",
+    likes: ""
 	}
 
   handleInputChange = event => {
@@ -37,24 +41,31 @@ class createProfile extends Component {
         links: this.state.links,
         links2: this.state.links2,
         links3: this.state.links3,
+        links4: this.state.links4,
+        links5: this.state.links5,
+        links6: this.state.links6,
         coverphoto: this.state.coverphoto,
         facebook: this.state.facebook,
-        soundcloud: this.state.soundcloud
+        soundcloud: this.state.soundcloud,
+        services: this.state.services,
+        likes: this.state.likes
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
         window.location.href="/profile";
   }
 
-  render() { 
+  render() {
     return (
       <div className="container">
-        <h3>Update Profile</h3>
+          <Jumbotron className="jumbo">
+            <h1>Create a Profile</h1>
+          </Jumbotron>
 
           <div className="row">
               <form className="col s12">
                 <div className="row">
-                  <div className="input-field col s6">
+                  <div className="input-field col s4">
                     <i className="material-icons prefix">child_care</i>
                     <input
                         value={this.state.artistName}
@@ -63,14 +74,23 @@ class createProfile extends Component {
                      id="icon_prefix" type="text" className="validate"/>
                     <label for="icon_prefix">Artist Name</label>
                   </div>
-                  <div className="input-field col s6">
+                  <div className="input-field col s4">
+                    <i className="material-icons prefix">account_circle</i>
+                    <input
+                        value={this.state.image}
+                        onChange={this.handleInputChange}
+                        name="image"
+                    id="icon_account" type="tel" className="validate"/>
+                    <label for="icon_account">Image Link</label>
+                  </div>
+                  <div className="input-field col s4">
                     <i className="material-icons prefix">account_circle</i>
                     <input
                         value={this.state.coverphoto}
                         onChange={this.handleInputChange}
                         name="coverphoto"
                     id="icon_account" type="tel" className="validate"/>
-                    <label for="icon_account">Image Link</label>
+                    <label for="icon_account">Coverphoto Link</label>
                   </div>
                 </div>
               </form>
@@ -96,21 +116,23 @@ class createProfile extends Component {
             <div className="row">
                 <form className="col s12">
                   <div className="row">
-                    <div className="input-field col s12">
-                      <Input s={12}
-                          type="select"
-                          label="TAG"
-                          icon='fingerprint'
+                    <div className="input-field col s6">
+                      <i className="material-icons prefix">fingerprint</i>
+                      <input
                           value={this.state.tags}
                           onChange={this.handleInputChange}
                           name="tags"
-                          id="icon_prefix" className="validate">
-                          <option value='Musician'>Musician</option>
-                          <option value='Visual Artist'>Visual Artist</option>
-                          <option value='Photographer'>Photographer</option>
-                          <option value='Writer'>Writer</option>
-                      <label for="icon_prefix"></label>
-                      </Input>
+                       id="icon_prefix" type="text" className="validate"/>
+                      <label for="icon_prefix">Tags</label>
+                    </div>
+                    <div className="input-field col s6">
+                      <i className="material-icons prefix">fingerprint</i>
+                      <input
+                          value={this.state.services}
+                          onChange={this.handleInputChange}
+                          name="services"
+                       id="icon_prefix" type="text" className="validate"/>
+                      <label for="icon_prefix">Services</label>
                     </div>
                   </div>
                 </form>
@@ -153,6 +175,40 @@ class createProfile extends Component {
                 <div className="row">
                     <form className="col s12">
                       <div className="row">
+                        <div className="input-field col s4">
+                          <i className="material-icons prefix">camera</i>
+                          <input
+                              value={this.state.links4}
+                              onChange={this.handleInputChange}
+                              name="links4"
+                           id="icon_prefix" type="text" className="validate"/>
+                          <label for="icon_prefix">Image Links</label>
+                        </div>
+                        <div className="input-field col s4">
+                          <i className="material-icons prefix">camera</i>
+                          <input
+                              value={this.state.links5}
+                              onChange={this.handleInputChange}
+                              name="links5"
+                          id="icon_account" type="tel" className="validate"/>
+                          <label for="icon_account">Image Links</label>
+                        </div>
+                        <div className="input-field col s4">
+                          <i className="material-icons prefix">camera</i>
+                          <input
+                              value={this.state.links6}
+                              onChange={this.handleInputChange}
+                              name="links6"
+                           id="icon_prefix" type="text" className="validate"/>
+                          <label for="icon_prefix">Image Links</label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                <div className="row">
+                    <form className="col s12">
+                      <div className="row">
                         <div className="input-field col s6">
                           <i className="material-icons prefix">child_care</i>
                           <input
@@ -177,7 +233,7 @@ class createProfile extends Component {
 
             <form>
               <FormBtn
-                disabled={!(this.state.artistName && this.state.bio && this.state.coverphoto)}
+                disabled={!(this.state.artistName)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Profile

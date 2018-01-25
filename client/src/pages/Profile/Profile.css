@@ -9,7 +9,12 @@
   height: auto;
   width: auto;
 }
-
+.visible {
+  display: inline;
+}
+.invisible {
+  display: none;
+}
 #social {
   position: absolute;
 right: 0;
