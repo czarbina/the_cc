@@ -155,7 +155,7 @@ var randToken = require("rand-token");
 
 
   router.get("/checkLogin", function(req, res) {
-    console.log(`Cookie: ${req.headers.cookie}`);
+    console.log("hit check login route");
     if(req.headers.cookie !== undefined){
       var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
     }else {
