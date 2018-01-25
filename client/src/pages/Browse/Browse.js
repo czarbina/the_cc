@@ -45,4 +45,4 @@ render() {
 }
 // const Browse = () => <BrowseMap Artists={Artists} />;
 
-export default Browse;
+export default Browse; 
