@@ -37,7 +37,8 @@ render() {
   return (
     <BrowseMap 
     Artists={this.state.artists}
-    goToProfile={this.goToProfile} />
+
+     />
 
     );
   }

@@ -363,21 +363,21 @@ class Home extends React.Component {
           where we are able to put our work out there for consumption, hire, and hopefully inspiration -  encouraging other artists to do the same.</p>
         </Col>
         <Col l={3} s={12}>
-          <h5 className="white-text">Settings</h5>
+          <h5 className="white-text">Our Friends</h5>
           <ul>
-            <li><a className="white-text" href="#!">Link 1</a></li>
-            <li><a className="white-text" href="#!">Link 2</a></li>
-            <li><a className="white-text" href="#!">Link 3</a></li>
-            <li><a className="white-text" href="#!">Link 4</a></li>
+            <li><a className="white-text" href="https://soundcloud.com/" target="_blank">Soundcloud</a></li>
+            <li><a className="white-text" href="https://boomkat.com/" target="_blank">Boomkat</a></li>
+            <li><a className="white-text" href="https://mixcloud.com/" target="_blank">Mixcloud</a></li>
+            <li><a className="white-text" href="https://beatport.com/" target="_blank">Beatport</a></li>
           </ul>
         </Col>
         <Col l={3} s={12}>
-          <h5 className="white-text">Connect</h5>
+          <h5 className="white-text">Resources</h5>
           <ul>
-            <li><a className="white-text" href="#!">Link 1</a></li>
-            <li><a className="white-text" href="#!">Link 2</a></li>
-            <li><a className="white-text" href="#!">Link 3</a></li>
-            <li><a className="white-text" href="#!">Link 4</a></li>
+            <li><a className="white-text" href="https://thequietus.com/" target="_blank">The Quietus</a></li>
+            <li><a className="white-text" href="https://www.ableton.com/en/live/learn-live/" target="_blank">Learn Ableton</a></li>
+            <li><a className="white-text" href="https://hypem.com/" target="_blank">The Hype Machine</a></li>
+            <li><a className="white-text" href="https://codeacademy.com" target="_blank">Learn to Code!</a></li>
           </ul>
         </Col>
       </Row>
