@@ -90,7 +90,7 @@ var randToken = require("rand-token");
       emailAddress: req.body.email,
       password: req.body.password,
       zipcode: req.body.zipcode,
-      birthday: req.body.dob     
+      birthday: req.body.dob
     }).then(function(results){
       res.json(results);
     });
@@ -120,7 +120,7 @@ var randToken = require("rand-token");
           var token = randToken.generate(16);
           var userId = loginCredentials[0].id;
           var putQuery = "authToken/" + userId;
-           
+
           // ========= Add authToken to user info in DB ========
           db.User.update({
             authToken: token
@@ -145,7 +145,7 @@ var randToken = require("rand-token");
         } else{
           res.end();
         };
-      
+
       } else {
         res.json(loginCredentials);
 
@@ -171,6 +171,17 @@ var randToken = require("rand-token");
       });
     });
 
+
+      router.get("/profileCard", function(req, res) {
+    var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
+          db.User.findOne({
+            where: {
+            authToken: authToken
+            }
+          }).then(function(results) {
+            res.json(results);
+          });
+      });
 
 
   module.exports  = router;

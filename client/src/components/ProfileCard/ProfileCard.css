@@ -4,3 +4,6 @@
 .visible {
   height: 50px;
 }
+.row1 {
+  display: inline;
+}

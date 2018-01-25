@@ -1,5 +1,6 @@
-.cover-photo {
+.soundcloud {
   width: 100%;
+  display: inline;
   position: relative;
   top: 0px;
   left: 0px;
@@ -8,11 +9,4 @@
   display: inline;
   height: auto;
   width: auto;
-}
-
-#social {
-  position: absolute;
-right: 0;
-  top: 250px;
-  z-index: 2;
 }

@@ -1,17 +1,19 @@
 import React from "react";
 import { Row, Card, Col, CardTitle} from 'react-materialize';
+import "./bio.css";
 
 const Bio = props => {
 
 return (
-<div className="container" style={{width:"80%"}}>
-	<Row>
-		<Col s={4}>
-
-				<p>About me: {props.bio}</p>
-
-		</Col>
-	</Row>
-</div>)};
+	<div className="container">
+		<Row>
+			<Col s={3}>
+			</Col>
+			<Col s={9} className="grey lighten-4">
+				<h5>About Me</h5>
+				<p className="padding">{props.bio}</p>
+			</Col>
+		</Row>
+	</div>)};
 
 export default Bio;
