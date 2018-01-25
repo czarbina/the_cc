@@ -71,20 +71,21 @@ class Profile extends React.Component {
 
 	render () {
     return (
-			<div>
-			<Row className="background">
-<Col s={9}></Col>
+		<div>
+		<Row className="background">
+			<Col s={9}></Col>
 			<Col id="social" s={3}>
 				<Icon
 					soundcloud={this.state.soundcloud}
 					facebook={this.state.facebook} />
-					</Col>
+			</Col>
 					</Row>
-				<Background
+			<div id="bground">		
+				<Background 
 					coverphoto={this.state.coverphoto}
 					artistName={this.state.artistName}
 				/>
-
+			</div>	
 
 
 			<Row className="row1">

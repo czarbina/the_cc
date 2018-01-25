@@ -14,5 +14,9 @@
   position: absolute;
 right: 0;
   top: 250px;
-  z-index: 2;
+  z-index: 1;
+}
+
+#bground {
+  z-index: -1;
 }

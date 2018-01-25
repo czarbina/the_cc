@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
 import { Link } from "react-router-dom";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { input, TextArea, FormBtn } from "../../components/Form";
 import API from "../../Utils/API";
 import "./create-profile.css";
 import $ from 'jquery';
+import { Input, Row } from "react-materialize"
 
 class createProfile extends Component {
 
@@ -48,9 +49,7 @@ class createProfile extends Component {
   render() { 
     return (
       <div className="container">
-          <Jumbotron className="jumbo">
-            <h1>Create a Profile</h1>
-          </Jumbotron>
+        <h3>Update Profile</h3>
 
           <div className="row">
               <form className="col s12">
@@ -97,14 +96,21 @@ class createProfile extends Component {
             <div className="row">
                 <form className="col s12">
                   <div className="row">
-                    <div className="input-field col s6">
-                      <i className="material-icons prefix">fingerprint</i>
-                      <input
+                    <div className="input-field col s12">
+                      <Input s={12}
+                          type="select"
+                          label="TAG"
+                          icon='fingerprint'
                           value={this.state.tags}
                           onChange={this.handleInputChange}
                           name="tags"
-                       id="icon_prefix" type="text" className="validate"/>
-                      <label for="icon_prefix">Tags</label>
+                          id="icon_prefix" className="validate">
+                          <option value='Musician'>Musician</option>
+                          <option value='Visual Artist'>Visual Artist</option>
+                          <option value='Photographer'>Photographer</option>
+                          <option value='Writer'>Writer</option>
+                      <label for="icon_prefix"></label>
+                      </Input>
                     </div>
                   </div>
                 </form>
@@ -171,7 +177,7 @@ class createProfile extends Component {
 
             <form>
               <FormBtn
-                disabled={!(this.state.artistName)}
+                disabled={!(this.state.artistName && this.state.bio && this.state.coverphoto)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Profile
