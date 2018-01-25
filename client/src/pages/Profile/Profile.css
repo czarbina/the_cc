@@ -20,3 +20,102 @@ right: 0;
 #bground {
   z-index: -1;
 }
+.background {
+  display: inline;
+  height: auto;
+  width: auto;
+}
+.width {
+
+  height: 50px;
+}
+.bg {
+  background-image: url("http://circulab.eu/wp-content/uploads/2015/08/background-ciel.jpg.pagespeed.ce.AkN_flPUd1.jpg");
+}
+.bg2 {
+  background-image: url("https://image.freepik.com/free-photo/white-textured-wall-background-texture_1368-6402.jpg");
+}
+#social {
+  position: absolute;
+  right: 0;
+  top: 250px;
+  z-index: 2;
+}
+.carousel {
+  width: 50px;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100%;
+  max-width: 900px;
+  margin: 2.5em auto;
+  border-radius: .35em;
+  background: #fcfcfc;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 26px rgba(0, 0, 0, .13);
+  box-shadow: 0 0 26px rgba(0, 0, 0, .13);
+}
+
+h1,
+p,
+{
+  color: white;
+}
+
+h1 {
+font-family: 'Roboto', sans-serif;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .4);
+  line-height: .65;
+  margin-top: .5em;
+  margin-bottom: 0;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.35em;
+}
+p {
+  font-size: 1.1em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(90deg, #d4eece, #55b3d0, #1e7eb7),
+    url(http://www.kinyu-z.net/data/wallpapers/225/1492634.jpg) no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+header input {
+  padding: 12px;
+  font-size: 1.15em;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.25em;
+  }
+}
+@media (min-width: 769px) {
+  header {
+    height: 280px;
+    padding: 2.5em 1em 1em;
+    background-position: 0 -95px;
+  }
+  div > label {
+    margin-top: 12px;
+  }
+  h1 {
+    font-size: 5.8em;
+  }
+  h2 {
+    font-size: 1.95em;
+  }
+
+}
