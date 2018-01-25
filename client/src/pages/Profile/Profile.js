@@ -42,12 +42,17 @@ class Profile extends React.Component {
 					soundcloud: data.data.soundcloud,
 					facebook: data.data.facebook
 				});
-					if (data.data.image != null) {
+					if (data.data.image != null || "") {
 						this.setState({
 							coverphoto: data.data.coverphoto,
 							image: data.data.image
 				});
 			};
+			if (data.data.coverphoto != null || "") {
+				this.setState({
+					coverphoto: data.data.coverphoto
+		});
+	};
 							console.log(this.state);
 	    });
 	  };
@@ -80,12 +85,12 @@ class Profile extends React.Component {
 					facebook={this.state.facebook} />
 			</Col>
 					</Row>
-			<div id="bground">		
-				<Background 
+			<div id="bground">
+				<Background
 					coverphoto={this.state.coverphoto}
 					artistName={this.state.artistName}
 				/>
-			</div>	
+			</div>
 
 
 			<Row className="row1">

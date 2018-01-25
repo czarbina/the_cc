@@ -7,8 +7,6 @@ const events = require("./eventsApiRoutes.js");
 router.use("/user", userInfo);
 router.use("/bio", userBio);
 router.use("/events", events);
-
+router.use("/events", events);
 
 module.exports = router;
-
-
