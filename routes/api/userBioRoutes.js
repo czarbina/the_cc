@@ -100,19 +100,22 @@ var Op = require("sequelize").Op;
   router.post("/createProfile", function(req, res) {
     if(req.headers.cookie){
       var authToken = req.headers.cookie.slice(10, req.headers.cookie.length);
+      var updateValues = {};
 
-    console.log(req.body);
-    db.Userbio.update({
-      artistName: req.body.artistName,
-      bio: req.body.bio,
-      tags: req.body.tags,
-      links: req.body.links,
-      links2: req.body.links,
-      links3: req.body.links,
-      soundcloud: req.body.soundcloud,
-      facebook: req.body.facebook,
-      coverphoto: req.body.coverphoto
-    },
+      if(req.body.artistName.length > 0){updateValues.artistName = req.body.artistName};
+      if(req.body.bio.length > 0){updateValues.bio = req.body.bio};
+      if(req.body.tags.length > 0){updateValues.tags = req.body.tags};
+      if(req.body.links.length > 0){updateValues.links = req.body.links};
+      if(req.body.links2.length > 0){updateValues.links2 = req.body.links2};
+      if(req.body.links3.length > 0){updateValues.links3 = req.body.links3};
+      if(req.body.soundcloud.length > 0){updateValues.soundcloud = req.body.soundcloud};
+      if(req.body.facebook.length > 0){updateValues.facebook = req.body.facebook};
+      if(req.body.coverphoto.length > 0){updateValues.coverphoto = req.body.coverphoto};
+
+      console.log("UPDATE VALUES!!!!!!!!!!!");
+      console.log(updateValues);
+
+    db.Userbio.update(updateValues ,
     {
      where: {
       authToken: authToken

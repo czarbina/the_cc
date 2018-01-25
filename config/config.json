@@ -1,11 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "theccdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false
+    "logging": false,
+    "port": 8889
   },
   "test": {
     "username": "root",

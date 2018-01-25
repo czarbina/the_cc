@@ -177,7 +177,7 @@ class createProfile extends Component {
 
             <form>
               <FormBtn
-                disabled={!(this.state.artistName && this.state.bio && this.state.coverphoto)}
+                disabled={!(this.state.artistName)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Profile
