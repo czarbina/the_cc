@@ -132,15 +132,9 @@ class Profile extends React.Component {
 							username={this.state.username}
 							zip={this.state.zip}
 							name={this.state.name}
+							bio={this.state.bio}
 			    	/>
 
-						<Row>
-							<Col s={3}></Col>
-							<Col className="soundcloud" s={9}>
-								<Bio
-									bio={this.state.bio} />
-								</Col>
-						</Row>
 
 						<Row>
 							<Col s={4}>
