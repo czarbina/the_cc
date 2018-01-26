@@ -9,6 +9,7 @@ import Soundcloud from "../../components/soundcloud/soundcloud";
 import Icon from "../../components/icons/icons";
 import "./Profile.css";
 import API from "../../Utils/API";
+import share from "./subtle_white_mini_waves.png";
 
 class Profile extends React.Component {
 
@@ -106,8 +107,8 @@ class Profile extends React.Component {
 
 		render () {
     	return (
-				<div className="bg">
-					<div className="container bg2">
+				<div id="bg">
+					<div style={{background: `url(${share})`}} className="container bg2">
 
 						<Background
 							coverphoto={this.state.coverphoto}

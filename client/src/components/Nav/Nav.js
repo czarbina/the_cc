@@ -93,7 +93,7 @@ class Nav extends React.Component {
   render () {
     return (
       <div>
-        <Navbar brand="THE CC" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2">
+        <Navbar id="thecc" brand="THE CC" right style={{paddingLeft:"20px"}} className="#7986cb indigo lighten-2 thecc">
           <NavItem>
             <Button
               className={this.state.loggedIn ? 'invisible' : 'navButton'}

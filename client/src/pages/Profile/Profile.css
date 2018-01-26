@@ -1,3 +1,4 @@
+
 .cover-photo {
   width: 100%;
   position: relative;
@@ -29,12 +30,17 @@
 p {
   font-family: 'Roboto', sans-serif;
 }
-.bg {
+/* .bg {
   height: 2000px;
   background-image: url("http://static.tumblr.com/f0061b0c66d3a2b132c843ae05e61e11/u5yskrb/Wl1nfvsc0/tumblr_static_7jr10j3va48wgs8okoos4ckoo.jpg");
+} */
+
+
+#bg {
+    background: linear-gradient(to bottom right, #1c92d2 ,#f2fcfe);
 }
 .bg2 {
-    height: 2000px;
+    height: 5000px;
   background-image: url("https://image.freepik.com/free-photo/white-textured-wall-background-texture_1368-6402.jpg");
 }
 .card-content {

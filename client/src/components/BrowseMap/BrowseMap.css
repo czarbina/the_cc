@@ -1,5 +1,4 @@
 
-
 .container{
 	width:95%;
 }
@@ -55,4 +54,10 @@
 #soundcloud {
 	position: absolute;
 	bottom: 0px;
+}
+li {
+font-family: 'Raleway', sans-serif;
+}
+h2 {
+	font-family: 'Raleway', sans-serif;
 }

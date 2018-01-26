@@ -22,7 +22,7 @@
   }
 
   .button {
-    color: rgba(121, 134, 203, 0.3);    
+    color: rgba(121, 134, 203, 0.3);
   }
 
   .modal-content {
@@ -55,7 +55,7 @@
   display: inline-block;
   word-wrap: normal;
   white-space: nowrap;
-  direction: ltr;} 
+  direction: ltr;}
 
   .invisible {
     display: none;
@@ -66,3 +66,6 @@
         box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
   }
 
+#thecc {
+  font-family: 'Montserrat', sans-serif;
+}

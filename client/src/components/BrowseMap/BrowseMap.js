@@ -5,11 +5,11 @@ import {Link} from "react-router-dom";
 const BrowseMap = props => {
 
   return(
-  <div className="container">
-    <ul className="cardGroup">
+  <div className="container ">
+    <ul className="cardGroup bg">
       {props.Artists.map(item=>(
         <Link to={"/profile/" + item.id} >
-          <li className="card"
+          <li className="card bg"
               key={item.id}>
          <img className="image" alt={item.artistName} src={item.image}/>
           <div className="bio">
