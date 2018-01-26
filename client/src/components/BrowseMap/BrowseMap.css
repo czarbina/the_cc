@@ -53,7 +53,12 @@
 }
 #soundcloud {
 	position: absolute;
-	bottom: 0px;
+	bottom: -115px;
+	height: 100px;
+}
+
+#bg {
+   background: linear-gradient(to left, rgba(121, 134, 203, 0.3), #fff);
 }
 li {
 font-family: 'Raleway', sans-serif;
