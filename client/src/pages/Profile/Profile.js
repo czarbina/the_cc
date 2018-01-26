@@ -10,6 +10,7 @@ import Icon from "../../components/icons/icons";
 import "./Profile.css";
 import API from "../../Utils/API";
 import share from "./subtle_white_mini_waves.png";
+import Comments from "../../components/Comments";
 
 class Profile extends React.Component {
 
@@ -107,6 +108,7 @@ class Profile extends React.Component {
 
 		render () {
     	return (
+    		<div>
 				<div id="bg">
 					<div style={{background: `url(${share})`}} className="container bg2">
 
@@ -154,9 +156,12 @@ class Profile extends React.Component {
 							/>
 							</Col>
 						</Row>
+						<Comments/>
 
 				</div>
 			</div>
+			</div>
+
 		)};
 };
 

@@ -29,6 +29,13 @@ border-radius: 30px;
 font-size: 24px;
 
 }
+
+p.username{
+position: absolute;
+bottom:210px;
+right:-65px;
+z-index: 1}
+
 .cardmain {
   position: fixed;
   top:  80;

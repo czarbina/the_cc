@@ -8,6 +8,7 @@ import Icon from "../../components/icons/icons";
 import Background from "../../components/background/background";
 import Soundcloud from "../../components/soundcloud/soundcloud";
 import "../Profile/Profile.css";
+import Comments from "../../components/Comments";
 
 class ArtistProfile extends React.Component {
 
@@ -133,6 +134,7 @@ class ArtistProfile extends React.Component {
 					</Row>
 
 			</div>
+
 		</div>
 	)};
 };

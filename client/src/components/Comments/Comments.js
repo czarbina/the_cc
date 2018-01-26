@@ -5,7 +5,7 @@ import "./Comments.css";
 const Comments = props => {
 
 return (
-	<div className="container" style={{width:"65%", marginLeft:"410px"}}>
+	<div className="container" style={{width:"60%", marginLeft:"415px"}}>
 	<div id="comments">
 	<Collapsible>
 	<CollapsibleItem header='from Sabrina' icon='favorite_border'>
