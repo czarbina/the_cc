@@ -264,7 +264,7 @@ class Home extends React.Component {
             <h2 className="center brown-text">
               <img src={connect} alt=""></img></h2>
             <h5 className="center">Connect and collaborate with other artists</h5>
-            <p className="light">Need a drummer? Perhaps you can find the John Bohnham to your Jimmy Page in our vast network of musicians. Looking to collaboate with another mural artist on a large outdoor piece? Here's the place to find them.</p>
+            <p className="light">Need a drummer? Perhaps you can find the John Bohnham to your Jimmy Page in our vast network of musicians. Looking to collaboate with another mural artist on a large outdoor piece? Here is the place to find them.</p>
         </Col>
 
         <Col s={12} m={4}>
@@ -304,7 +304,7 @@ class Home extends React.Component {
                 marginLeft: "auto",
                 left: "auto",
                 right: "auto"
-            }}></h5>
+            }}>If you would like to join our community, go ahead and make a profile.  We are growing every day and our community could be the perfect platform to get your work out there.  You never know who might see it.  Let us all grow together.</h5>
           </Row>
         </div>
       </div>
@@ -347,7 +347,7 @@ class Home extends React.Component {
             <h5 className="header col s12 light" style={{marginLeft: "auto",
               left: "auto",
               right: "auto"
-            }}>If you would like to join our community, go ahead and make a profile.  We are growing every day and our community could be the perfect platform to get your work out there.  You never know who might see it.  Let's all grow together.  </h5>
+            }}>Spread the love.</h5>
           </div>
         </div>
       </div>
@@ -359,25 +359,25 @@ class Home extends React.Component {
       <Row>
         <Col l={6} s={12}>
           <h5 className="white-text">About us</h5>
-          <p className="grey-text text-lighten-4">We're a network of creative types that also happen to be friends. This site will provide a hub
+          <p className="grey-text text-lighten-4">We are a network of creative types that also happen to be friends. This site will provide a hub
           where we are able to put our work out there for consumption, hire, and hopefully inspiration -  encouraging other artists to do the same.</p>
         </Col>
         <Col l={3} s={12}>
           <h5 className="white-text">Our Friends</h5>
           <ul>
-            <li><a className="white-text" href="https://soundcloud.com/" target="_blank">Soundcloud</a></li>
-            <li><a className="white-text" href="https://boomkat.com/" target="_blank">Boomkat</a></li>
-            <li><a className="white-text" href="https://mixcloud.com/" target="_blank">Mixcloud</a></li>
-            <li><a className="white-text" href="https://beatport.com/" target="_blank">Beatport</a></li>
+            <li><a className="white-text" href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer">Soundcloud</a></li>
+            <li><a className="white-text" href="https://boomkat.com/" target="_blank" rel="noopener noreferrer">Boomkat</a></li>
+            <li><a className="white-text" href="https://mixcloud.com/" target="_blank" rel="noopener noreferrer">Mixcloud</a></li>
+            <li><a className="white-text" href="https://beatport.com/" target="_blank" rel="noopener noreferrer">Beatport</a></li>
           </ul>
         </Col>
         <Col l={3} s={12}>
           <h5 className="white-text">Resources</h5>
           <ul>
-            <li><a className="white-text" href="https://thequietus.com/" target="_blank">The Quietus</a></li>
-            <li><a className="white-text" href="https://www.ableton.com/en/live/learn-live/" target="_blank">Learn Ableton</a></li>
-            <li><a className="white-text" href="https://hypem.com/" target="_blank">The Hype Machine</a></li>
-            <li><a className="white-text" href="https://codeacademy.com" target="_blank">Learn to Code!</a></li>
+            <li><a className="white-text" href="https://thequietus.com/" target="_blank" rel="noopener noreferrer">The Quietus</a></li>
+            <li><a className="white-text" href="https://www.ableton.com/en/live/learn-live/" target="_blank" rel="noopener noreferrer">Learn Ableton</a></li>
+            <li><a className="white-text" href="https://hypem.com/" target="_blank" rel="noopener noreferrer">The Hype Machine</a></li>
+            <li><a className="white-text" href="https://codeacademy.com" target="_blank" rel="noopener noreferrer">Learn to Code!</a></li>
           </ul>
         </Col>
       </Row>

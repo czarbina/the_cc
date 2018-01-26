@@ -1,8 +1,6 @@
 import React from "react";
-import Browse from "../../pages/Browse/Browse";
 import "./BrowseMap.css";
 import {Link} from "react-router-dom";
-
 
 const BrowseMap = props => {
   return(
@@ -16,7 +14,7 @@ const BrowseMap = props => {
           <div className="bio">
             <li><h2> {item.artistName}</h2> </li>
             <span><li> {item.bio} </li></span>
-              <li> <iframe id="soundcloud" className={item.links != null ? 'visible container' : 'invisible'} width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src={item.links}></iframe> </li>
+              <li> <iframe title="title" id="soundcloud" className={item.links != null ? 'visible container' : 'invisible'} width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src={item.links}></iframe> </li>
           </div>
 
           </li>
@@ -26,7 +24,5 @@ const BrowseMap = props => {
     </div>
   );
 };
-
-
 
 export default BrowseMap;

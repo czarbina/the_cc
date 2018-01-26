@@ -1,11 +1,8 @@
 import React from "react";
-import { Row, Card, Col, CardTitle, Carousel} from 'react-materialize';
+import { Row, Card, Col, CardTitle } from 'react-materialize';
 import "./ProfileCard.css";
 
-
-
 const ProfileCard = props => {
-
 
 return (
 <div className="container left" style={{width:"80%"}}>
@@ -19,7 +16,7 @@ return (
     				width: "300px",
 						height: "700px"
     		}}
-				actions={[<a href='#'>Contact Me</a>]}
+				actions={[<a href='/Profile'>Contact Me</a>]}
 				header={<CardTitle
 					style= {{
 					height: "300px",

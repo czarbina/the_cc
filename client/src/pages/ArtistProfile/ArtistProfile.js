@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Row, Card, Col, CardTitle, Carousel, MediaBox, Button} from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import ProfileCard from "../../components/ProfileCard";
 import Services from "../../components/services/services";
 import Bio from "../../components/bio/bio";

@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, NavItem } from 'react-materialize';
 import { Link } from "react-router-dom";
 import "./Nav.css";
-import { Button, Card, Row, Col, Icon } from 'react-materialize';
+import { Button, Row, Col } from 'react-materialize';
 import axios from "axios";
 import ReactModal from 'react-modal';
 
@@ -79,10 +79,10 @@ class Nav extends React.Component {
       }
     });
   }
- 
+
   logout = (e) => {
     e.preventDefault();
-    document.cookie = "authToken" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = "authToken" + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     console.log("logout function called");
     this.setState({'loggedIn': false});
     console.log(this.state);
@@ -132,9 +132,9 @@ class Nav extends React.Component {
           </NavItem>
 
           <ul id="nav-mobile" className="side-nav">
-            <li><a href="#">Navbar Link</a></li>
+            <li><a href="/">Navbar Link</a></li>
           </ul>
-        <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
+        <a href="/Browse" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
     </Navbar>
 
      <ReactModal

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-import { Link } from "react-router-dom";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { input,FormBtn } from "../../components/Form";
 import API from "../../Utils/API";
 import "./create-profile.css";
-import $ from 'jquery';
+import {Input} from "react-materialize";
 
 class createProfile extends Component {
 
@@ -118,13 +117,19 @@ class createProfile extends Component {
                 <form className="col s12">
                   <div className="row">
                     <div className="input-field col s6">
-                      <i className="material-icons prefix">fingerprint</i>
-                      <input
+                      <Input
+                          icon="fingerprint"
+                          label="Tags"
                           value={this.state.tags}
                           onChange={this.handleInputChange}
                           name="tags"
-                       id="icon_prefix" type="text" className="validate"/>
-                      <label for="icon_prefix">Tags</label>
+                       id="icon_prefix" type="select" className="validate">
+                       <option value='Musician'>Musician</option>
+                       <option value='Photographer'>Photographer</option>
+                       <option value='Artist'>Artist</option>
+                       <option valur='Writer'>Writer</option>
+                       </Input>
+
                     </div>
                     <div className="input-field col s6">
                       <i className="material-icons prefix">fingerprint</i>

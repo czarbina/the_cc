@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Row, Card, Col, CardTitle} from 'react-materialize';
 import "./bio.css";
 
 const Bio = props => {
