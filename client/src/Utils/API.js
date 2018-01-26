@@ -11,7 +11,3 @@ export default {
     return axios.get("/bio/search");
   }
 };
-<<<<<<< HEAD
-  
-=======
->>>>>>> browsep
