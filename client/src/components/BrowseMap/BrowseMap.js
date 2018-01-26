@@ -9,7 +9,7 @@ const BrowseMap = props => {
     <ul className="cardGroup">
       {props.Artists.map(item=>(
         <Link to={"/profile/" + item.id} >
-          <li className="card"
+          <li className="card bg"
               key={item.id}>
          <img className="image" alt={item.artistName} src={item.image}/>
           <div className="bio">
