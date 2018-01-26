@@ -14,7 +14,7 @@ const graffiti = "https://www.olivet.edu/sites/default/files/images/page-blocks/
 
 ReactModal.setAppElement('#root');
 
-class Home extends React.Component { 
+class Home extends React.Component {
 
     constructor () {
     super();
@@ -29,15 +29,15 @@ class Home extends React.Component {
       dob: ""
 
     };
-    
+
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
-  
+
   handleOpenModal () {
     this.setState({ showModal: true });
   }
-  
+
   handleCloseModal () {
     this.setState({ showModal: false });
     }
@@ -51,17 +51,17 @@ class Home extends React.Component {
     state[e.target.name] = e.target.value;
     this.setState(state);
   }
- 
+
   autoLogin = (userInfo) => {
-    axios.get("user/login", { 
+    axios.get("user/login", {
       params: userInfo
     }).then(function(res){
-      window.location.href = "/profile"; 
+      window.location.href = "/profile";
     });
   }
 
   onSubmit = (e) => {
-    e.preventDefault();  
+    e.preventDefault();
     console.log(this.state);
     console.log("Heeey1");
     if (this.state.password===this.state.password_conf) {
@@ -69,7 +69,7 @@ class Home extends React.Component {
           .then((result) => {
             console.log(result);
             this.setState({ showModal: false });
-            
+
             const newUserAutoLogin = {
               username: result.data.username,
               password: result.data.password
@@ -107,18 +107,18 @@ class Home extends React.Component {
 
     return (
   <div>
-   
+
   <Parallax
     bgImage={painter}
     bgWidth="100%"
     bgHeight="500"
     strength={500}
   >
-    <div className="parallax-container" 
+    <div className="parallax-container"
         style={{
-          minHeight: "380px", 
-          lineHeight: 0, 
-          height: "auto", 
+          minHeight: "380px",
+          lineHeight: 0,
+          height: "auto",
           color: "#ffffffff",
           WebkitBoxAlign: "center",
           WebkitAlignItems: "center",
@@ -130,16 +130,16 @@ class Home extends React.Component {
       <div className="container" style={{ height: 500 }}>
         <h1 style={{color:"#7986cb"}} className="header center">Share. Connect. Succeed.</h1>
           <Row className="center">
-            <h5 className="header col s12 light">Join our creative community!</h5>
+            <h5 className="header col s12 light">Join our creative community!!</h5>
           </Row>
           <Row className="center">
-            <Button 
+            <Button
             style={{zIndex:0}}
-            id="reg-button" 
+            id="reg-button"
             onClick={this.handleOpenModal}
             className="btn-large waves-effect waves-light #7986cb indigo lighten-2">Sign up</Button>
 
-          <ReactModal 
+          <ReactModal
            isOpen={this.state.showModal}
            contentLabel="Registration"
            id="modal1"
@@ -155,10 +155,10 @@ class Home extends React.Component {
 
                 <Row>
                   <Col s={12} className="input-field">
-                    <input 
-                      name="name" 
-                      type="text" 
-                      className="validate" 
+                    <input
+                      name="name"
+                      type="text"
+                      className="validate"
                       value={this.state.name}
                       onChange={this.onChange}>
                     </input>
@@ -167,9 +167,9 @@ class Home extends React.Component {
                 </Row>
                 <Row>
                   <Col s={12} className="input-field">
-                    <input 
-                      name="email" 
-                      type="email" 
+                    <input
+                      name="email"
+                      type="email"
                       className="validate"
                       value={this.state.email}
                       onChange={this.onChange}>
@@ -179,9 +179,9 @@ class Home extends React.Component {
                 </Row>
                 <Row>
                   <Col s={12} className="input-field">
-                    <input 
-                      name="username" 
-                      type="text" 
+                    <input
+                      name="username"
+                      type="text"
                       className="validate"
                       value={this.state.username}
                       onChange={this.onChange}>
@@ -189,9 +189,9 @@ class Home extends React.Component {
                     <label for="username">Username</label>
                   </Col>
                   <Col s={6} className="input-field">
-                    <input 
-                      name="password" 
-                      type="password" 
+                    <input
+                      name="password"
+                      type="password"
                       className="validate"
                       value={this.state.password}
                       onChange={this.onChange}>
@@ -199,9 +199,9 @@ class Home extends React.Component {
                     <label for="password">Password</label>
                   </Col>
                   <Col s={6} className="input-field">
-                    <input 
-                      name="password_conf" 
-                      type="password" 
+                    <input
+                      name="password_conf"
+                      type="password"
                       className="validate"
                       value={this.state.password_conf}
                       onChange={this.onChange}>
@@ -211,9 +211,9 @@ class Home extends React.Component {
                 </Row>
                 <Row>
                   <Col s={6} className="input-field">
-                    <input 
-                      name="dob" 
-                      type="text" 
+                    <input
+                      name="dob"
+                      type="text"
                       className="validate"
                       value={this.state.dob}
                       onChange={this.onChange}>
@@ -221,30 +221,30 @@ class Home extends React.Component {
                     <label for="dob">Birthday (DDMMYYYY)</label>
                   </Col>
                   <Col s={6} className="input-field">
-                    <input 
-                      name="zipcode" 
-                      type="text" 
+                    <input
+                      name="zipcode"
+                      type="text"
                       className="validate"
                       value={this.state.zipcode}
                       onChange={this.onChange}></input>
                     <label for="zipcode">Zipcode</label>
                   </Col>
                 </Row>
-                <Row> 
+                <Row>
                   <Col s={6}>
-                    
-                    <Button 
-                      href="#!" 
-                      id="regBtn" 
+
+                    <Button
+                      href="#!"
+                      id="regBtn"
                       className="btn-large waves-effect waves-light #7986cb indigo lighten-2"
-                      type="submit" 
+                      type="submit"
                       onClick={this.onSubmit}>SUBMIT</Button>
                   </Col>
                 </Row>
               </form>
             </div>
           </ReactModal>
-          </Row> 
+          </Row>
         </div>
       </div>
     </div>
@@ -269,7 +269,7 @@ class Home extends React.Component {
 
         <Col s={12} m={4}>
           <div className="icon-block">
-            <h2 className="center brown-text">       
+            <h2 className="center brown-text">
             <img src={success} alt=""></img></h2>
             <h5 className="center">Book gigs and sell your work.</h5>
             <p className="light">You're a DJ? Musician? Have a gallery opening soon? Use our calendar tool to let event bookers know when you're free or to alert others of any upcoming gigs you have in the pipeline.</p>
@@ -284,11 +284,11 @@ class Home extends React.Component {
     bgHeight="500"
     strength={500}
   >
-    <div className="parallax-container" 
+    <div className="parallax-container"
       style={{
-        minHeight: "380px", 
-        lineHeight: 0, 
-        height: "auto", 
+        minHeight: "380px",
+        lineHeight: 0,
+        height: "auto",
         color: "#ffffffff",
         WebkitBoxAlign: "center",
         WebkitAlignItems: "center",
@@ -299,7 +299,7 @@ class Home extends React.Component {
       <div className="section no-pad-bot" style={{width: ""}}>
         <div className="container" style={{ height: 450, width: "100%"}}>
           <Row className="center" style={{width: ""}}>
-            <h5 className="header col s12 light" 
+            <h5 className="header col s12 light"
               style={{
                 marginLeft: "auto",
                 left: "auto",
@@ -329,11 +329,11 @@ class Home extends React.Component {
     bgHeight="500"
     strength={500}
   >
-    <div className="parallax-container" 
+    <div className="parallax-container"
       style={{
-        minHeight: "380px", 
-        lineHeight: 0, 
-        height: "auto", 
+        minHeight: "380px",
+        lineHeight: 0,
+        height: "auto",
         color: "#ffffffff",
         WebkitBoxAlign: "center",
         WebkitAlignItems: "center",
@@ -394,5 +394,3 @@ class Home extends React.Component {
 };
 
 export default Home;
-
-
