@@ -1,5 +1,8 @@
 
 
+
+
+
 .container{
 	width:95%;
 }
@@ -60,4 +63,10 @@
 
 #bg {
    background: linear-gradient(to left, rgba(121, 134, 203, 0.3), #fff);
+}
+li {
+font-family: 'Raleway', sans-serif;
+}
+h2 {
+	font-family: 'Raleway', sans-serif;
 }

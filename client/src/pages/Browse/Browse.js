@@ -51,7 +51,7 @@ class Browse extends Component {
 render() {
   console.log(this.state);
   return (
-    <div>
+    <div >
     <Search />
     <BrowseMap
     Artists={this.state.artists}
