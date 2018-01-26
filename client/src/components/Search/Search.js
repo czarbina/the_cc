@@ -1,6 +1,5 @@
 import React from "react";
 import { Collapsible, CollapsibleItem } from 'react-materialize';
-import "./Search.css";
 import {Input, TextArea, FormBtn} from "../../components/Form";
 import BrowseMap from "../../components/BrowseMap/BrowseMap";
 import API from "../../Utils/API";
