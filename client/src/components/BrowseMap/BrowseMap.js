@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 
 
 const BrowseMap = props => {
+
   return(
   <div className="container">
     <ul className="cardGroup">

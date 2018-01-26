@@ -8,6 +8,7 @@ import Background from "../../components/background/background";
 import Soundcloud from "../../components/soundcloud/soundcloud";
 import Icon from "../../components/icons/icons";
 import "./Profile.css";
+import API from "../../Utils/API";
 
 class Profile extends React.Component {
 
@@ -28,8 +29,22 @@ class Profile extends React.Component {
 			facebook:"",
 			zip: "",
 			username: "",
-			services: ""
+			services: "",
+			artists: []
 		};
+  //
+	// 	getSearch = () => {
+	// 		API.searchArtist({
+	//       id: this.state.id,
+	//       artistName: this.state.artistName,
+	//       image: this.state.image,
+	//       bio: this.state.bio,
+	//       links: this.state.links
+	//     })
+	//       .then(res => this.setState({ artists: res.data }))
+	//       .catch(err => console.log(err));
+	// 			console.log(this.state.artists);
+  // };
 
 		getProfile = () => {
 	    axios.get("/bio/profile").then((data) => {
@@ -78,7 +93,14 @@ class Profile extends React.Component {
 	  componentDidMount = () => {
 	    this.getProfile();
 			this.getProfileCard();
+
 	  };
+
+		// 	handleFormSubmit = event => {
+		// 		event.preventDefault();
+		//   this.getSearch();
+		// console.log(this.state.artists);
+		//  	 };
 
 		render () {
     	return (

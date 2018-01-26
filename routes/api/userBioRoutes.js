@@ -12,6 +12,21 @@ var Op = require("sequelize").Op;
     });
   });
 
+  router.get("/search", function(req, res) {
+    db.Userbio.findAll({
+      where: {
+        tags: "Musician"
+      }
+    }).then(function(results) {
+      res.json(results)
+          console.log(results);
+      ;
+    }).catch(function(err) {
+      console.log(err);
+    });
+
+  });
+
   router.get("/artists", function(req, res) {
     db.Userbio.findAll({
       where: {
@@ -20,7 +35,6 @@ var Op = require("sequelize").Op;
           }
         }
       }).then(function(results){
-        console.log("banana",results);
         res.json(results);
       });
   });
