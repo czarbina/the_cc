@@ -178,39 +178,6 @@ class createProfile extends Component {
                   </form>
                 </div>
 
-                <div className="row">
-                    <form className="col s12">
-                      <div className="row">
-                        <div className="input-field col s4">
-                          <i className="material-icons prefix">camera</i>
-                          <input
-                              value={this.state.links4}
-                              onChange={this.handleInputChange}
-                              name="links4"
-                           id="icon_prefix" type="text" className="validate"/>
-                          <label for="icon_prefix">Image Links</label>
-                        </div>
-                        <div className="input-field col s4">
-                          <i className="material-icons prefix">camera</i>
-                          <input
-                              value={this.state.links5}
-                              onChange={this.handleInputChange}
-                              name="links5"
-                          id="icon_account" type="tel" className="validate"/>
-                          <label for="icon_account">Image Links</label>
-                        </div>
-                        <div className="input-field col s4">
-                          <i className="material-icons prefix">camera</i>
-                          <input
-                              value={this.state.links6}
-                              onChange={this.handleInputChange}
-                              name="links6"
-                           id="icon_prefix" type="text" className="validate"/>
-                          <label for="icon_prefix">Image Links</label>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
 
                 <div className="row">
                     <form className="col s12">
@@ -245,39 +212,6 @@ class createProfile extends Component {
                 Submit Profile
               </FormBtn>
             </form>
-
-            <div className="row">
-                <form className="col s12">
-                  <div className="row">
-                    <div className="input-field col s4">
-                      <i className="material-icons prefix">child_care</i>
-                      <input
-                          value={this.state.artistName}
-                          onChange={this.handleInputChange}
-                          name="artistName"
-                       id="icon_prefix" type="text" className="validate"/>
-                      <label for="icon_prefix">Artist Name</label>
-                    </div>
-                    <div className="input-field col s4">
-                      <i className="material-icons prefix">account_circle</i>
-                      <input
-                          value={this.state.image}
-                          onChange={this.handleInputChange}
-                          name="image"
-                      id="icon_account" type="tel" className="validate"/>
-                      <label for="icon_account">Image Link</label>
-                    </div>
-                    <div className="input-field col s4">
-                    <FormBtn
-                      disabled={!(this.state.artistName)}
-                      onClick={this.handleFormSubmit}
-                    >
-                      Submit Profile
-                    </FormBtn>
-                    </div>
-                  </div>
-                </form>
-              </div>
 
       </div>
     );
