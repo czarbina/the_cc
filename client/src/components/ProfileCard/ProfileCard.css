@@ -4,24 +4,28 @@
 .visible {
   height: 50px;
 }
-.row1 {
-  display: inline;
-}
+
 .card-content {
 	background: white;
   height: 300px;
+  font-family: 'Raleway', sans-serif;
+
 }
 .card-action {
 	background: white;
-
-
+  
 }
-
+.cssfont {
+      font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+}
 .card-image {
+    font-family: 'Raleway', sans-serif;
 color: red;
 
 }
 .username {
+    font-family: 'Raleway', sans-serif;
     background: white;
   color: #ffab40;
 padding: 10px;
@@ -30,10 +34,15 @@ font-size: 24px;
 
 }
 .cardmain {
+    font-family: 'Raleway', sans-serif;
   position: fixed;
   top:  80;
   left: 80;
   width: 300px;
   height: 700px;
 
+}
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
 }

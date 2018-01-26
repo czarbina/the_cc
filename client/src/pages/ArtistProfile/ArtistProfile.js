@@ -8,6 +8,7 @@ import Icon from "../../components/icons/icons";
 import Background from "../../components/background/background";
 import Soundcloud from "../../components/soundcloud/soundcloud";
 import "../Profile/Profile.css";
+import share from "./subtle_white_mini_waves.png";
 
 class ArtistProfile extends React.Component {
 
@@ -84,8 +85,8 @@ class ArtistProfile extends React.Component {
 	};
 	render () {
 		return (
-			<div className="bg">
-				<div className="container bg2">
+			<div id="bg">
+				<div style={{background: `url(${share})`}} className="container bg2">
 
 					<Background
 						coverphoto={this.state.coverphoto}
@@ -107,15 +108,9 @@ class ArtistProfile extends React.Component {
 						username={this.state.username}
 						zip={this.state.zip}
 						name={this.state.name}
+						bio={this.state.bio}
 					/>
 
-					<Row>
-						<Col s={3}></Col>
-						<Col className="soundcloud" s={9}>
-							<Bio
-								bio={this.state.bio} />
-							</Col>
-					</Row>
 
 					<Row>
 						<Col s={4}>

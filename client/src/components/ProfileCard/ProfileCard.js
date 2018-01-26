@@ -1,14 +1,15 @@
 import React from "react";
 import { Row, Card, Col, CardTitle } from 'react-materialize';
 import "./ProfileCard.css";
-
+// <p>{props.name}</p>
+// <p>Zip Code: {props.zip}</p>
 const ProfileCard = props => {
 
 return (
-<div className="container left" style={{width:"80%"}}>
-	<Row>
-		<Col s={4}>
-			<Card className='extra-large z-depth-5 card'
+<div className="container left cssfont" style={{width:"80%"}}>
+	<Row classname="cssfont">
+		<Col classname="cssfont" s={4}>
+			<Card id="cssfont" className='cssfont extra-large z-depth-5 card'
 				style= {{
     				position: "fixed",
     				top: "80",
@@ -24,14 +25,13 @@ return (
 					}}
 					image={props.image}
 
-				><p className="username" >{props.username}</p>
+				><p >{props.username}</p>
 				</CardTitle>}
 				>
 
-				<p>{props.name}</p>
-				<p>Zip Code: {props.zip}</p>
 
-   <p class="flow-text">I am Flow Text</p>
+<h6>About Me</h6>
+   <p className="flow-text cssfont">{props.bio}</p>
 			</Card>
 		</Col>
 	</Row>
