@@ -127,6 +127,8 @@ class ArtistProfile extends React.Component {
 						/>
 						</Col>
 					</Row>
+				<Comments/>
+	
 
 			</div>
 

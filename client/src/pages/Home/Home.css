@@ -11,6 +11,10 @@
     background-color: white;
   }
 
+  h5 {
+    font-weight: 900;
+  }
+
   .Overlay {
     position: fixed;
     top: 0;
@@ -52,4 +56,6 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;}
+
+
 
