@@ -6,7 +6,12 @@ export default {
   },
   getArtists: function() {
   	return axios.get("/bio/artists");
+  },
+  searchArtists: function() {
+    return axios.get("/bio/search");
   }
-
 };
+<<<<<<< HEAD
   
+=======
+>>>>>>> browsep

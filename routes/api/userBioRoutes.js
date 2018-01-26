@@ -12,11 +12,29 @@ var Op = require("sequelize").Op;
     });
   });
 
+  router.get("/search", function(req, res) {
+    db.Userbio.findAll({
+      where: {
+        tags: "Musician"
+      }
+    }).then(function(results) {
+      res.json(results)
+          console.log(results);
+      ;
+    }).catch(function(err) {
+      console.log(err);
+    });
+
+  });
+
   router.get("/artists", function(req, res) {
-    console.log("HITTING ROUTE!!! /bio/artists");
-    db.Userbio.findAll().then(function(results){
-        console.log("banana",results);
-        console.log(results);
+    db.Userbio.findAll({
+      where: {
+        image: {
+          [Op.ne]: null
+          }
+        }
+      }).then(function(results){
         res.json(results);
       });
   });
@@ -146,4 +164,4 @@ var Op = require("sequelize").Op;
   });
 
 
-  module.exports = router; 
+  module.exports = router;
