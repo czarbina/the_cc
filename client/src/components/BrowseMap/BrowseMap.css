@@ -58,6 +58,6 @@
 	height: 100px;
 }
 
-.bg {
+#bg {
    background: linear-gradient(to left, rgba(121, 134, 203, 0.3), #fff);
 }
